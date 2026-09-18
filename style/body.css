@@ -1,0 +1,1585 @@
+/* =========================================================
+   ABOUT / SECURITY PROFILE
+========================================================= */
+
+.about {
+    position: relative;
+
+    padding: 130px 6vw 150px;
+
+    background:
+        radial-gradient(
+            circle at 75% 20%,
+            rgba(255, 255, 255, 0.035),
+            transparent 35%
+        ),
+        #080707;
+
+    color: #ef1e56;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.about-grid-bg {
+    position: absolute;
+
+    inset: 0;
+    background-size: 50px 50px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 90%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SECTION MARKER
+========================================================= */
+
+.section-marker {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1400px;
+
+    margin: 0 auto 80px;
+
+    padding-bottom: 15px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    border-bottom:
+        1px solid
+        rgba(150, 142, 142, 0.265);
+
+    font-family: monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 0.2em;
+
+    color: #555;
+}
+
+
+/* =========================================================
+   ABOUT GRID
+========================================================= */
+
+.about-container {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 320px 1fr;
+
+    gap: clamp(
+        60px,
+        9vw,
+        140px
+    );
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.about-sidebar {
+    position: sticky;
+
+    top: 40px;
+}
+
+
+/* =========================================================
+   AVATAR
+========================================================= */
+
+.avatar-frame {
+    position: relative;
+
+    width: 280px;
+
+    height: 360px;
+
+    padding: 7px;
+
+    background: #030304;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
+
+    overflow: hidden;
+
+    box-shadow:
+        20px 20px 0
+        rgba(255,255,255,0.025);
+}
+
+
+.avatar-frame img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    filter:
+        grayscale(25%)
+        contrast(1.15)
+        brightness(0.95);
+
+    transition:
+        transform 0.6s ease,
+        filter 0.6s ease;
+}
+
+
+.avatar-frame:hover img {
+
+    transform: scale(1.04);
+
+    filter:
+        grayscale(25%)
+        contrast(1.15)
+        brightness(0.95);
+
+}
+
+
+/* =========================================================
+   AVATAR SCAN
+========================================================= */
+
+.avatar-scan {
+    position: absolute;
+
+    left: 7px;
+    right: 7px;
+
+    height: 2px;
+
+    top: 7px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.7),
+            transparent
+        );
+
+    box-shadow:
+        0 0 15px
+        rgba(255,255,255,0.4);
+
+    animation:
+        avatarScan
+        4s
+        linear
+        infinite;
+}
+
+
+@keyframes avatarScan {
+
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(345px);
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================================
+   AVATAR CORNERS
+========================================================= */
+
+.avatar-corner {
+    position: absolute;
+
+    z-index: 5;
+
+    width: 20px;
+    height: 20px;
+}
+
+
+.corner-tl {
+    top: 0;
+    left: 0;
+
+    border-top:
+        1px solid #fff;
+
+    border-left:
+        1px solid #fff;
+}
+
+
+.corner-tr {
+    top: 0;
+    right: 0;
+
+    border-top:
+        1px solid #fff;
+
+    border-right:
+        1px solid #fff;
+}
+
+
+.corner-bl {
+    bottom: 0;
+    left: 0;
+
+    border-bottom:
+        1px solid #fff;
+
+    border-left:
+        1px solid #fff;
+}
+
+
+.corner-br {
+    bottom: 0;
+    right: 0;
+
+    border-bottom:
+        1px solid #fff;
+
+    border-right:
+        1px solid #fff;
+}
+
+
+.avatar-id {
+    position: absolute;
+
+    z-index: 6;
+
+    left: 20px;
+
+    bottom: 18px;
+
+    font-family: monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 0.2em;
+
+    color: white;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.system-status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 18px;
+
+    font-family: monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 0.15em;
+
+    color: #777;
+}
+
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: rgb(219, 211, 213);
+
+    box-shadow:
+        0 0 12px
+        rgba(247, 23, 72, 0.8);
+
+    animation:
+        statusPulse
+        2s
+        infinite;
+}
+
+
+@keyframes statusPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.25;
+    }
+
+}
+
+
+/* =========================================================
+   SIDEBAR INFO
+========================================================= */
+
+.sidebar-info {
+
+    margin-top: 35px;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    font-family: monospace;
+}
+
+
+.sidebar-info span {
+
+    margin-top: 12px;
+
+    font-size: 8px;
+
+    letter-spacing: 0.15em;
+
+    color: #3f3f3f;
+}
+
+
+.sidebar-info strong {
+
+    font-size: 9px;
+
+    font-weight: 400;
+
+    letter-spacing: 0.08em;
+
+    color: #888;
+}
+
+
+/* =========================================================
+   ABOUT CONTENT
+========================================================= */
+
+.about-content {
+    max-width: 850px;
+}
+
+
+.about-label {
+
+    margin-bottom: 25px;
+
+    font-family: monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 0.2em;
+
+    color: #555;
+}
+
+
+.about-title {
+    font-family: "IBMPL", sans-serif;
+    margin: 0;
+
+    font-size:
+        clamp(
+            2.5rem,
+            5vw,
+            5.5rem
+        );
+
+    line-height: 0.94;
+
+    font-weight: 500;
+
+    letter-spacing: -0.055em;
+
+    text-transform: uppercase;
+}
+
+
+.about-title span {
+    color: #555;
+}
+
+
+/* =========================================================
+   META
+========================================================= */
+
+.about-meta {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 35px;
+}
+
+
+.about-meta span {
+
+    padding: 8px 11px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
+
+    font-family: monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 0.1em;
+
+    color: #777;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.about-description {
+    font-family: "AntiSlab", sans-serif;
+    max-width: 760px;
+
+    margin-top: 60px;
+
+    padding-top: 30px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.1);
+}
+
+
+.about-description p {
+
+    margin:
+        0 0 25px;
+
+    font-size: 16px;
+
+    line-height: 1.85;
+
+    color: #858585;
+}
+
+
+.about-description p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   STACK
+========================================================= */
+
+.about-stack {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 45px;
+}
+
+
+.about-stack span {
+
+    padding: 8px 12px;
+
+    background:
+        rgba(255,255,255,0.02);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    font-family: monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 0.08em;
+
+    color: #777;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.about-stack span:hover {
+
+    background: white;
+
+    border-color: white;
+
+    color: black;
+}
+
+
+/* =========================================================
+   SECURITY MONITOR
+========================================================= */
+
+.security-monitor {
+
+    position: relative;
+
+    z-index: 3;
+
+    max-width: 1400px;
+
+    margin:
+        110px auto 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255,255,255,0.06),
+            transparent 45%
+        ),
+        #030304;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    box-shadow:
+        0 40px 100px
+        rgba(0,0,0,0.55);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   MONITOR HEADER
+========================================================= */
+
+.monitor-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 24px 28px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.08);
+}
+
+
+.monitor-overline {
+
+    font-family: monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 0.2em;
+
+    color: #444;
+}
+
+
+.monitor-top h3 {
+
+    margin: 6px 0 0;
+
+    font-family: monospace;
+
+    font-size: 14px;
+
+    font-weight: 400;
+
+    letter-spacing: 0.12em;
+}
+
+
+.monitor-live {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-family: monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 0.15em;
+
+    color: #777;
+}
+
+
+.monitor-live span {
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 0 12px white;
+
+    animation:
+        statusPulse
+        1.5s
+        infinite;
+}
+
+
+/* =========================================================
+   NETWORK STAGE
+========================================================= */
+
+.network-stage {
+
+    position: relative;
+
+    height: 330px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(255,255,255,0.035),
+            transparent 40%
+        );
+}
+
+
+/* =========================================================
+   NETWORK GRID
+========================================================= */
+
+.network-stage::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    /* background-image:
+
+        linear-gradient(
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        40px 40px; */
+}
+
+
+/* =========================================================
+   DEVICES
+========================================================= */
+
+.network-device {
+
+    position: absolute;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    z-index: 10;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-family: monospace;
+}
+
+
+.device-client {
+    left: 7%;
+}
+
+
+.device-server {
+    right: 7%;
+}
+
+
+.device-square {
+
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #09090a;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.25);
+
+    box-shadow:
+        0 0 30px
+        rgba(255,255,255,0.03);
+
+    font-size: 10px;
+
+    color: #aaa;
+}
+
+
+.network-device strong {
+
+    font-size: 9px;
+
+    font-weight: 400;
+
+    letter-spacing: 0.18em;
+
+    color: #aaa;
+}
+
+
+.network-device small {
+
+    font-size: 8px;
+
+    color: #444;
+}
+
+
+/* =========================================================
+   NETWORK PATH
+========================================================= */
+
+.network-path {
+
+    position: absolute;
+
+    top: 50%;
+
+    height: 1px;
+
+    transform:
+        translateY(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.3),
+            rgba(255,255,255,0.3),
+            transparent
+        );
+}
+
+
+.path-left {
+
+    left: 16%;
+
+    right: 50%;
+
+    margin-right: 55px;
+}
+
+
+.path-right {
+
+    left: 50%;
+
+    right: 16%;
+
+    margin-left: 55px;
+}
+
+
+/* =========================================================
+   FIREWALL
+========================================================= */
+
+.firewall-core {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    width: 120px;
+    height: 120px;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 20;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* центральный щит */
+
+.firewall-shield {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #09090a;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.5);
+
+    font-family: monospace;
+
+    font-size: 11px;
+
+    box-shadow:
+        0 0 35px
+        rgba(255,255,255,0.1);
+
+    animation:
+        firewallPulse
+        2s
+        infinite;
+}
+
+
+@keyframes firewallPulse {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 20px
+            rgba(255,255,255,0.05);
+    }
+
+    50% {
+        box-shadow:
+            0 0 40px
+            rgba(255,255,255,0.2);
+    }
+
+}
+
+
+/* =========================================================
+   FIREWALL ROTATING SCANNER
+========================================================= */
+
+.firewall-scanner {
+
+    position: absolute;
+
+    width: 105px;
+    height: 105px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    animation:
+        firewallRotate
+        5s
+        linear
+        infinite;
+}
+
+
+.firewall-scanner::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -3px;
+
+    left: 50%;
+
+    width: 6px;
+    height: 6px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 0 15px white;
+}
+
+
+@keyframes firewallRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   FIREWALL INNER LINES
+========================================================= */
+
+.firewall-lines {
+
+    position: absolute;
+
+    width: 85px;
+    height: 85px;
+
+    border:
+        1px dashed
+        rgba(255,255,255,0.08);
+
+    border-radius: 50%;
+
+    animation:
+        firewallRotateReverse
+        8s
+        linear
+        infinite;
+}
+
+
+@keyframes firewallRotateReverse {
+
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+
+}
+
+
+.firewall-name {
+
+    position: absolute;
+
+    bottom: -30px;
+
+    font-family: monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 0.2em;
+
+    color: #777;
+}
+
+
+.firewall-state {
+
+    position: absolute;
+
+    bottom: -44px;
+
+    font-family: monospace;
+
+    font-size: 7px;
+
+    letter-spacing: 0.15em;
+
+    color: #444;
+}
+
+
+/* =========================================================
+   PACKETS
+========================================================= */
+
+.packet {
+
+    position: absolute;
+
+    top: 50%;
+
+    width: 7px;
+    height: 7px;
+
+    margin-top: -3px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 0 14px
+        rgba(255,255,255,0.9);
+
+    z-index: 15;
+}
+
+
+/* LEFT → FIREWALL */
+
+.packet-a {
+
+    animation:
+        packetLeft
+        2.4s
+        linear
+        infinite;
+}
+
+
+.packet-b {
+
+    animation:
+        packetLeft
+        2.4s
+        linear
+        infinite
+        0.8s;
+}
+
+
+.packet-c {
+
+    animation:
+        packetLeft
+        2.4s
+        linear
+        infinite
+        1.6s;
+}
+
+
+/* FIREWALL → SERVER */
+
+.packet-d {
+
+    animation:
+        packetRight
+        2.4s
+        linear
+        infinite
+        0.3s;
+}
+
+
+.packet-e {
+
+    animation:
+        packetRight
+        2.4s
+        linear
+        infinite
+        1.1s;
+}
+
+
+.packet-f {
+
+    animation:
+        packetRight
+        2.4s
+        linear
+        infinite
+        1.9s;
+}
+
+
+/* =========================================================
+   PACKET ANIMATION
+========================================================= */
+
+@keyframes packetLeft {
+
+    0% {
+        left: 0%;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+
+}
+
+
+@keyframes packetRight {
+
+    0% {
+        left: 100%;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 0%;
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================================
+   SCANLINE
+========================================================= */
+
+.network-scanline {
+
+    position: absolute;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.08),
+            transparent
+        );
+
+    animation:
+        networkScan
+        5s
+        linear
+        infinite;
+}
+
+
+@keyframes networkScan {
+
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   LOG
+========================================================= */
+
+.monitor-log {
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.08);
+}
+
+
+.log-title,
+.log-row {
+
+    display: grid;
+
+    grid-template-columns:
+        100px
+        70px
+        1fr
+        100px;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding:
+        12px 28px;
+
+    font-family: monospace;
+
+    font-size: 9px;
+}
+
+
+.log-title {
+
+    color: #333;
+
+    letter-spacing: 0.12em;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.05);
+}
+
+
+.log-row {
+
+    color: #555;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.04);
+
+    transition:
+        background 0.2s ease;
+}
+
+
+.log-row:hover {
+
+    background:
+        rgba(255,255,255,0.025);
+}
+
+
+.log-row strong {
+
+    text-align: right;
+
+    font-weight: 400;
+}
+
+
+.log-allow {
+
+    color: #777;
+}
+
+
+.log-danger strong {
+
+    color: #aaa;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.monitor-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.08);
+}
+
+
+.stat {
+
+    padding: 22px 28px;
+
+    border-right:
+        1px solid
+        rgba(255,255,255,0.06);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.stat:last-child {
+    border-right: none;
+}
+
+
+.stat strong {
+
+    font-family: monospace;
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    color: #ddd;
+}
+
+
+.stat span {
+
+    font-family: monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 0.15em;
+
+    color: #444;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .about {
+
+        padding:
+            90px 20px
+            100px;
+    }
+
+
+    .section-marker {
+
+        margin-bottom: 55px;
+
+    }
+
+
+    .about-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+
+    .about-sidebar {
+
+        position: relative;
+
+        top: auto;
+    }
+
+
+    .avatar-frame {
+
+        margin: auto;
+
+        width:
+            min(280px, 85vw);
+
+        height:
+            min(360px, 105vw);
+    }
+
+
+    .about-title {
+
+        font-size:
+            clamp(
+                2.3rem,
+                11vw,
+                4rem
+            );
+    }
+
+
+    .security-monitor {
+
+        margin-top: 70px;
+    }
+
+
+    .network-stage {
+
+        height: 270px;
+    }
+
+
+    .network-device {
+
+        transform:
+            translateY(-50%)
+            scale(0.8);
+    }
+
+
+    .device-client {
+        left: 2%;
+    }
+
+
+    .device-server {
+        right: 2%;
+    }
+
+
+    .path-left {
+
+        left: 15%;
+
+        margin-right: 45px;
+    }
+
+
+    .path-right {
+
+        right: 15%;
+
+        margin-left: 45px;
+    }
+
+
+    .log-title,
+    .log-row {
+
+        grid-template-columns:
+            65px
+            45px
+            1fr
+            70px;
+
+        padding:
+            11px 15px;
+
+        font-size: 8px;
+
+        gap: 7px;
+    }
+
+
+    .monitor-top {
+
+        padding: 20px 15px;
+    }
+
+
+    .monitor-stats {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .stat {
+
+        padding: 17px 15px;
+
+        border-bottom:
+            1px solid
+            rgba(255,255,255,0.06);
+    }
+
+}
