@@ -1,0 +1,376 @@
+@import url("var.css");
+
+/* ========================================
+   MOBILE NAVIGATION
+======================================== */
+
+.nav-menu-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    max-width: 100%;
+
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 14px 16px 16px;
+
+    box-sizing: border-box;
+
+    background:
+        radial-gradient(
+            circle at 50% -80px,
+            rgba(255, 255, 255, 0.22),
+            transparent 55%
+        ),
+        linear-gradient(
+            180deg,
+            #d0d0d4 0%,
+            #c6c6ca 100%
+        );
+
+    border-bottom:
+        1px solid
+        rgba(24, 24, 25, 0.16);
+
+    box-shadow:
+        0 12px 35px
+        rgba(0, 0, 0, 0.28);
+
+    overflow: hidden;
+
+    transform: translateY(0);
+
+    transition:
+        transform 0.35s ease;
+}
+
+
+/* ========================================
+   HIDDEN STATE
+======================================== */
+
+.nav-menu-mobile.nav-m-hidden {
+    transform: translateY(-100%);
+}
+
+
+/* ========================================
+   BACKGROUND LIGHT
+======================================== */
+
+.nav-menu-mobile::after {
+    content: "";
+
+    position: absolute;
+
+    top: -150px;
+    left: 50%;
+
+    width: 450px;
+    height: 250px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    filter:
+        blur(80px);
+
+    pointer-events: none;
+}
+
+
+/* ========================================
+   NAME CONTAINER
+======================================== */
+
+.mobile-hero-text {
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding:
+        4px
+        0
+        12px;
+
+    border-bottom:
+        1px solid
+        rgba(24, 24, 25, 0.16);
+
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   NAME
+======================================== */
+
+.mobile-hero-text_title {
+    font-family:
+        "Fjalla",
+        sans-serif;
+
+    margin: 0;
+
+    color: #242427;
+
+    font-size:
+        clamp(
+            1.7rem,
+            7vw,
+            2.3rem
+        );
+
+    font-weight: 500;
+
+    letter-spacing:
+        0.1em;
+
+    text-transform:
+        uppercase;
+
+    text-shadow:
+        0 0 25px
+        rgba(255, 255, 255, 0.15);
+
+    transition:
+        color 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+
+.mobile-hero-text_title:hover {
+    color: #514c4c;
+
+    text-shadow:
+        0 0 20px
+        rgba(255, 255, 255, 0.25);
+}
+
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+.nav-menu-mobile_elements {
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        0;
+
+    margin: 0;
+
+    padding: 8px 0 0;
+
+    box-sizing: border-box;
+
+    list-style: none;
+}
+
+
+/* ========================================
+   NAVIGATION ITEM
+======================================== */
+
+.nav-menu-mobile_elements_li {
+    min-width: 0;
+
+    list-style: none;
+
+    border-bottom:
+        1px solid
+        rgba(24, 24, 25, 0.1);
+}
+
+
+/* Вертикальная линия между колонками */
+
+.nav-menu-mobile_elements_li:nth-child(
+    odd
+) {
+    border-right:
+        1px solid
+        rgba(24, 24, 25, 0.1);
+
+    padding-right: 10px;
+}
+
+
+.nav-menu-mobile_elements_li:nth-child(
+    even
+) {
+    padding-left: 10px;
+}
+
+
+/* ========================================
+   LINKS
+======================================== */
+
+.nav-menu-mobile_elements_li a {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    min-height: 40px;
+
+    box-sizing: border-box;
+
+    padding:
+        9px 3px;
+
+    color: #181819;
+
+    font-family:
+        "AntiSlab",
+        sans-serif;
+
+    font-size:
+        0.66rem;
+
+    font-weight: 500;
+
+    line-height: 1.3;
+
+    letter-spacing:
+        0.055em;
+
+    text-decoration: none;
+
+    text-transform:
+        uppercase;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* ========================================
+   LINK NUMBER
+======================================== */
+
+.nav-menu-mobile_elements_li a::first-letter {
+    color: #6b6c70;
+}
+
+
+/* ========================================
+   HOVER
+======================================== */
+
+.nav-menu-mobile_elements_li a:hover {
+    color: var(--red-text);
+
+    transform:
+        translateX(3px);
+}
+
+
+/* ========================================
+   ACTIVE / TOUCH
+======================================== */
+
+.nav-menu-mobile_elements_li a:active {
+    color: #000;
+
+    transform:
+        translateX(5px);
+}
+
+
+/* ========================================
+   REMOVE OLD UNDERLINE EFFECT
+======================================== */
+
+.nav-menu-mobile_elements_li a::after {
+    display: none;
+}
+
+
+/* ========================================
+   VERY SMALL PHONES
+======================================== */
+
+@media (max-width: 380px) {
+
+    .nav-menu-mobile {
+        padding:
+            12px
+            12px
+            13px;
+    }
+
+
+    .mobile-hero-text {
+        padding-bottom: 10px;
+    }
+
+
+    .mobile-hero-text_title {
+        font-size:
+            1.55rem;
+
+        letter-spacing:
+            0.08em;
+    }
+
+
+    .nav-menu-mobile_elements {
+        padding-top: 5px;
+    }
+
+
+    .nav-menu-mobile_elements_li:nth-child(
+        odd
+    ) {
+        padding-right: 7px;
+    }
+
+
+    .nav-menu-mobile_elements_li:nth-child(
+        even
+    ) {
+        padding-left: 7px;
+    }
+
+
+    .nav-menu-mobile_elements_li a {
+        min-height: 36px;
+
+        padding:
+            7px 2px;
+
+        font-size:
+            0.59rem;
+
+        letter-spacing:
+            0.035em;
+    }
+}

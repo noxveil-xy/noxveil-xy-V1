@@ -1,6 +1,8 @@
 @import url("./reset.css");
 @import url("./fonts.css");
+@import url("./var.css");
 @import url("./nav-menu.css");
+@import url("./nav-menu-mobile.css");
 @import url("./body.css");
 @import url("./body-stack-projects.css");
 @import url("./body-projects.css");
@@ -9,18 +11,28 @@
 @import url("./footer.css");
 
 
-:root{
-    --white-back: #D5DADE;
-    --black-back: #080707;
-    --black-back-light: rgba(151, 133, 133, 0.035);
-    --line-color-botom: 
-        1px solid
-        rgba(150, 142, 142, 0.265);
-    --red-text: #ef1e56;
-    --black-text: #242427;
-    --gray-text: #555;
-}
-
 html, body{
     background-color: var(--white-back);
+}
+
+
+@media (min-width: 1281px){
+    .nav-menu-mobile{
+        display: none;
+    }
+}
+@media (min-width: 1025px) and (max-width: 1280px){
+    .nav-menu-mobile{
+        display: none;
+    }
+}
+@media (min-width: 765px) and (max-width: 1024px){
+    .nav-menu{
+        display: none;
+    }
+}
+@media (max-width: 767px){
+    .nav-menu{
+        display: none;
+    }
 }
