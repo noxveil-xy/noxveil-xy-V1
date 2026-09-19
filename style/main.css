@@ -1,28 +1,26 @@
 @import url("./reset.css");
+@import url("./fonts.css");
 @import url("./nav-menu.css");
 @import url("./body.css");
+@import url("./body-stack-projects.css");
+@import url("./body-projects.css");
+@import url("./body-work-learn.css");
+@import url("./feedback.css");
+@import url("./footer.css");
+
+
+:root{
+    --white-back: #D5DADE;
+    --black-back: #080707;
+    --black-back-light: rgba(151, 133, 133, 0.035);
+    --line-color-botom: 
+        1px solid
+        rgba(150, 142, 142, 0.265);
+    --red-text: #ef1e56;
+    --black-text: #242427;
+    --gray-text: #555;
+}
 
 html, body{
-    background-color: rgb(213, 218, 222);
-}
-@font-face{
-    font-family: "IBMPL";
-    src: url("../static/fonts/IBMPlexMono-Light.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face{
-    font-family: "AntiSlab";
-    src: url("../static/fonts/AnticSlab-Regular.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face{
-    font-family: "SpecialElite";
-    src: url("../static/fonts/SpecialElite-Regular.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+    background-color: var(--white-back);
 }

@@ -1,12 +1,9 @@
 .nav-menu {
     position: relative;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-
     padding: 28px 40px 22px;
-
     background:
         radial-gradient(
             circle at 50% -20%,
@@ -18,12 +15,9 @@
             #cbcbd0 0%,
             #cbcbd0 100%
         );
-
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-
     box-shadow:
         0 15px 50px rgba(0, 0, 0, 0.35);
-
     overflow: hidden;
 }
 
@@ -31,21 +25,14 @@
 /* Центральный мягкий свет */
 .nav-menu::after {
     content: "";
-
     position: absolute;
-
     top: -180px;
     left: 50%;
-
     width: 700px;
     height: 350px;
-
     transform: translateX(-50%);
-
     background: rgba(255, 255, 255, 0.035);
-
     filter: blur(100px);
-
     pointer-events: none;
 }
 
@@ -54,15 +41,11 @@
 .hero-text {
     position: relative;
     z-index: 1;
-
     width: min(1100px, 90%);
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     padding: 22px 0;
-
     border-bottom: 1px solid rgba(4, 3, 3, 0.284);
 }
 
@@ -71,20 +54,13 @@
 .hero-text_title {
     font-family: "Fjalla", sans-serif;
     margin: 0;
-
     color: #242427;
-
     font-size: clamp(2.2rem, 4vw, 4.5rem);
-
     font-weight: 500;
-
     letter-spacing: 0.12em;
-
     text-transform: uppercase;
-
     text-shadow:
         0 0 30px rgba(255, 255, 255, 0.08);
-
     transition:
         color 0.3s ease,
         text-shadow 0.3s ease;
@@ -93,7 +69,6 @@
 
 .hero-text_title:hover {
     color: #514c4c;;
-
     text-shadow:
         0 0 25px rgba(255, 255, 255, 0.18);
 }
@@ -103,12 +78,9 @@
 .nav-menu_elements {
     position: relative;
     z-index: 1;
-
     display: flex;
     align-items: center;
-
     gap: clamp(25px, 4vw, 65px);
-
     margin: 0;
     padding: 22px 0 5px;
 }
@@ -139,7 +111,6 @@
 
 .nav-menu_elements_li a:hover {
     color: #514c4c;
-
     transform: translateY(-2px);
 }
 
