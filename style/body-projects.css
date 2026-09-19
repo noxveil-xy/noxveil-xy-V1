@@ -1,3 +1,5 @@
+@import url("./body-projects.css");
+
 /* =========================================================
    PROJECTS
 ========================================================= */
@@ -12,7 +14,7 @@
         150px;
 
     background:
-        #f1f1ef;
+        var(--white-back);
 
     color: #101011;
 
@@ -29,20 +31,6 @@
     position: absolute;
 
     inset: 0;
-
-    background-image:
-
-        linear-gradient(
-            rgba(0,0,0,0.025) 1px,
-            transparent 1px
-        ),
-
-        linear-gradient(
-            90deg,
-            rgba(0,0,0,0.025) 1px,
-            transparent 1px
-        );
-
     background-size: 50px 50px;
 
     pointer-events: none;
@@ -106,7 +94,7 @@
 
 
 .projects-title {
-
+    font-family: "IBMPL", sans-serif;
     margin: 0;
 
     font-size:
@@ -128,12 +116,12 @@
 
 .projects-title span {
 
-    color: #999;
+    color: var(--red-text);
 }
 
 
 .projects-intro {
-
+    font-family: "AntiSlab", sans-serif;
     max-width: 650px;
 
     margin-top: 35px;
@@ -173,7 +161,7 @@
 ========================================================= */
 
 .project-card {
-
+    font-family: "IBMPL", sans-serif;
     display: grid;
 
     grid-template-columns:
@@ -185,7 +173,7 @@
     background:
         #080809;
 
-    color: #eee;
+    color: var(--white-back);
 
     box-shadow:
         20px 20px 0
