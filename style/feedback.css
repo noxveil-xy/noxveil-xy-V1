@@ -1,19 +1,19 @@
+@import url("var.css");
+
 /* =========================================================
    CONTACT
    ========================================================= */
 
 .contact {
     position: relative;
-
     padding: 130px 6vw 40px;
-
     background: #050506;
-
     color: #eeeeef;
-
     overflow: hidden;
 }
-
+.contact-title{
+    font-family: "IBMPL", sans-serif;
+}
 
 /* =========================================================
    BACKGROUND
@@ -23,17 +23,6 @@
     position: absolute;
 
     inset: 0;
-
-    background-image:
-        linear-gradient(
-            rgba(255, 255, 255, 0.018) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255, 255, 255, 0.018) 1px,
-            transparent 1px
-        );
 
     background-size: 55px 55px;
 
@@ -127,6 +116,7 @@
 }
 
 .contact-label {
+    font-family: monospace;
     margin-bottom: 25px;
 
     color: #77777c;
@@ -163,6 +153,7 @@
 
 
 .contact-description {
+    font-family: "AntiSlab", sans-serif;
     max-width: 540px;
 
     margin: 35px 0 0;
@@ -232,6 +223,7 @@
 
 
 .contact-channel small {
+    font-family: monospace;
     display: block;
 
     margin-bottom: 6px;
@@ -245,7 +237,8 @@
 
 
 .contact-channel strong {
-    color: #d5d5d7;
+    color: var(--red-text);
+    font-family: "AntiSlab", sans-serif;
 
     font-size: 0.82rem;
 
@@ -312,6 +305,7 @@
 
 .form-overline {
     display: block;
+    font-family: "AntiSlab", sans-serif;
 
     margin-bottom: 10px;
 
@@ -324,6 +318,7 @@
 
 
 .form-header h3 {
+    font-family: "IBMPL", sans-serif;
     margin: 0;
 
     color: #eeeeef;
@@ -337,8 +332,8 @@
 
 
 .form-status {
+    font-family: monospace;
     display: flex;
-
     align-items: center;
 
     gap: 8px;
@@ -405,8 +400,8 @@
 
 
 .form-field {
+    font-family: monospace;
     display: flex;
-
     flex-direction: column;
 
     gap: 10px;
@@ -458,12 +453,12 @@
 
 .form-field input::placeholder,
 .form-field textarea::placeholder {
-    color: #4f4f54;
+    color: var(--red-text);
 }
 
 
 .form-field select {
-    color: #77777c;
+    color: var(--red-text);
 
     cursor: pointer;
 }
@@ -528,7 +523,7 @@
 
 
 .form-security {
-
+    font-family: "AntiSlab", sans-serif;
     display: flex;
 
     align-items: center;
@@ -548,7 +543,6 @@
 
 
 .security-indicator {
-
     flex-shrink: 0;
 
     width: 7px;
@@ -561,14 +555,13 @@
         rgba(255, 255, 255, 0.15);
 }
 
-
 /* =========================================================
    BUTTON
    ========================================================= */
 
 .contact-submit {
-
     display: flex;
+    font-family: "AntiSlab", sans-serif;
 
     align-items: center;
 
@@ -636,7 +629,7 @@
    ========================================================= */
 
 .contact-bottom {
-
+    font-family: monospace;
     position: relative;
     z-index: 1;
 

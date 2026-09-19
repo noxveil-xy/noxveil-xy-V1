@@ -1,3 +1,5 @@
+@import url("var.css");
+
 /* =========================================================
    CAREER / EXPERIENCE / EDUCATION / CERTIFICATES
    ========================================================= */
@@ -6,25 +8,13 @@
     position: relative;
     overflow: hidden;
     padding: 130px 6vw 160px;
-    background: #f1f1ef;
+    background: var(--white-back);
     color: #080809;
 }
 
 .career-grid-bg {
     position: absolute;
     inset: 0;
-
-    background-image:
-        linear-gradient(
-            rgba(0, 0, 0, 0.035) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 0.035) 1px,
-            transparent 1px
-        );
-
     background-size: 55px 55px;
 
     mask-image:
@@ -77,6 +67,7 @@
 }
 
 .career-label {
+    font-family: monospace;
     margin-bottom: 22px;
 
     color: #77777b;
@@ -87,6 +78,7 @@
 }
 
 .career-title {
+    font-family: "IBMPL", sans-serif;
     margin: 0;
 
     font-size: clamp(2.7rem, 6vw, 6rem);
@@ -97,14 +89,11 @@
 }
 
 .career-title span {
-    display: block;
-
-    color: transparent;
-
-    -webkit-text-stroke: 1px #111113;
+    color: var(--gray-text);
 }
 
 .career-intro {
+    font-family: "AntiSlab", sans-serif;
     max-width: 680px;
 
     margin-top: 35px;
@@ -123,7 +112,7 @@
 .experience-card {
     display: grid;
     grid-template-columns: 240px 1fr;
-
+    font-family: "IBMPL", sans-serif;
     margin-bottom: 150px;
 
     background: #080809;
@@ -224,7 +213,7 @@
 .experience-heading h3 {
     margin: 0;
 
-    color: #f2f2f3;
+    color: var(--white-back);
 
     font-size: clamp(1.8rem, 3vw, 3rem);
     font-weight: 500;
@@ -278,7 +267,7 @@
 
     margin-bottom: 25px;
 
-    color: #e9e9ea;
+    color: var(--red-text);
 
     font-size: 0.75rem;
     font-weight: 600;
@@ -380,6 +369,7 @@
 }
 
 .education-card {
+    font-family: "AntiSlab", sans-serif;
     position: relative;
 
     min-height: 360px;
@@ -390,7 +380,7 @@
 
     padding: 35px;
 
-    background: #e8e8e6;
+    background: var(--black-back);
 
     border: 1px solid rgba(0, 0, 0, 0.1);
 
@@ -403,8 +393,6 @@
 
 .education-card:hover {
     transform: translateY(-5px);
-
-    background: #e4e4e2;
 }
 
 .education-active {
@@ -423,28 +411,36 @@
 }
 
 .education-number {
+    font-family: monospace;
+    color: var(--red-text);
     font-size: 2.5rem;
     font-weight: 300;
 
-    color: rgba(0, 0, 0, 0.18);
 }
-
+.education-number-1{
+    font-family: monospace;
+    color: var(--red-text);
+    font-size: 2.5rem;
+    font-weight: 300;
+}
 .education-active .education-number {
     color: rgba(255, 255, 255, 0.14);
 }
 
 .education-status {
+    font-family: monospace;
     font-size: 0.62rem;
     letter-spacing: 0.14em;
 
-    color: #66666a;
+    color: var(--red-text);
 }
 
 .education-active .education-status {
-    color: #99999d;
+    color: var(--red-text);
 }
 
 .education-overline {
+    font-family: monospace;
     display: block;
 
     margin-bottom: 18px;
@@ -456,6 +452,8 @@
 }
 
 .education-content h3 {
+    font-family: "IBMPL", sans-serif;
+    color: var(--white-back);
     max-width: 500px;
 
     margin: 0;
@@ -466,6 +464,7 @@
 }
 
 .education-form {
+    font-family: "AntiSlab", sans-serif;
     margin: 18px 0 0;
 
     color: #77777b;
@@ -475,6 +474,7 @@
 }
 
 .education-place {
+    font-family: "AntiSlab", sans-serif;
     max-width: 500px;
 
     margin: 15px 0 0;
@@ -512,9 +512,9 @@
     width: 180px;
 }
 
-.education-active .education-line {
-    background: #eeeeee;
-}
+/* .education-active .education-line {
+    background: #ed5c5c;
+} */
 
 
 /* =========================================================
@@ -659,6 +659,7 @@
 /* CERTIFICATE INFO */
 
 .certificate-info {
+    font-family: monospace;
     padding: 28px;
 }
 
@@ -668,13 +669,14 @@
 
     margin-bottom: 25px;
 
-    color: #66666b;
+    color: var(--red-text);
 
     font-size: 0.62rem;
     letter-spacing: 0.13em;
 }
 
 .certificate-info h3 {
+    font-family: "IBMPL", sans-serif;
     margin: 0;
 
     color: #eeeeef;
@@ -685,6 +687,7 @@
 }
 
 .certificate-info p {
+    font-family: "AntiSlab", sans-serif;
     margin: 12px 0 0;
 
     color: #77777c;
