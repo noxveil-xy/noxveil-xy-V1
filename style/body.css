@@ -10,7 +10,7 @@
     background:
         radial-gradient(
             circle at 75% 20%,
-            rgba(255, 255, 255, 0.035),
+            rgba(151, 133, 133, 0.035),
             transparent 35%
         ),
         #080707;
@@ -42,35 +42,22 @@
 }
 
 
-/* =========================================================
-   SECTION MARKER
-========================================================= */
-
+/* СЕКЦИЯ МАРКЕР: НАЗВАНИЯ И ЛИНИЯ --------------- */
 .section-marker {
     position: relative;
-
     z-index: 2;
-
     max-width: 1400px;
-
     margin: 0 auto 80px;
-
     padding-bottom: 15px;
-
     display: flex;
-
     justify-content: space-between;
-
     border-bottom:
         1px solid
         rgba(150, 142, 142, 0.265);
 
     font-family: monospace;
-
     font-size: 10px;
-
     letter-spacing: 0.2em;
-
     color: #555;
 }
 
