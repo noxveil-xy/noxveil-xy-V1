@@ -257,7 +257,7 @@
 .tech-item {
 
     min-height: 90px;
-
+    font-family: "AntiSlab", sans-serif;
     padding: 15px;
 
     display: flex;

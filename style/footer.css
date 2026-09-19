@@ -1,3 +1,5 @@
+@import url("var.css");
+
 /* =========================================================
    NOXVEIL-Xy
    SECURITY FOOTER
@@ -11,7 +13,13 @@
 
     padding: 120px 6vw 25px;
 
-    background: #030304;
+        background:
+        radial-gradient(
+            circle at 75% 20%,
+            rgba(151, 133, 133, 0.017),
+            transparent 35%
+        ),
+        #050506;
     color: #fff;
 
     overflow: hidden;
@@ -27,22 +35,7 @@
     position: absolute;
 
     inset: 0;
-
-    background-image:
-
-        linear-gradient(
-            rgba(255,255,255,0.018) 1px,
-            transparent 1px
-        ),
-
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,0.018) 1px,
-            transparent 1px
-        );
-
-    background-size:
-        55px 55px;
+    
 
     mask-image:
         linear-gradient(
@@ -72,8 +65,8 @@
     transform:
         translateX(-50%);
 
-    background:
-        rgba(255,255,255,0.025);
+    /* background:
+        rgba(255,255,255,0.025); */
 
     filter:
         blur(130px);
@@ -187,7 +180,7 @@
 .terminal-label {
 
     display: block;
-
+    font-family: "AntiSlab", sans-serif;
     margin-bottom: 5px;
 
     color: #505156;
@@ -200,7 +193,7 @@
 
 
 .terminal-heading h2 {
-
+    font-family: "IBMPL", sans-serif;
     margin: 0;
 
     color: #dedee0;
@@ -249,7 +242,7 @@
 .terminal-status {
 
     display: flex;
-
+    font-family: monospace;
     align-items: center;
 
     gap: 28px;
@@ -536,7 +529,7 @@
 .terminal-line.success
 .terminal-message {
 
-    color: #b5b5b8;
+    color: var(--red-text);
 }
 
 
@@ -545,7 +538,7 @@
 .terminal-line.warning
 .terminal-message {
 
-    color: #c0c0c3;
+    color: var(--red-text);
 }
 
 
@@ -571,7 +564,7 @@
 .terminal-line.danger
 .terminal-message {
 
-    color: #ededee;
+    color: var(--red-text);
 
     text-shadow:
         0 0 14px
@@ -684,7 +677,7 @@
     margin-bottom: 15px;
 
     color: #5d5e62;
-
+    font-family: monospace;
     font-size: 8px;
 
     letter-spacing:
@@ -1212,7 +1205,7 @@
     display: flex;
 
     flex-direction: column;
-
+    font-family: monospace;
     gap: 7px;
 
     padding:
@@ -1297,7 +1290,7 @@
 .footer-brand-name {
 
     color: #e5e5e7;
-
+    font-family: "IBMPL", sans-serif;
     font-size: 23px;
 
     font-weight: 500;
@@ -1317,7 +1310,7 @@
     color: #5e5f63;
 
     font-size: 10px;
-
+    font-family: "AntiSlab", sans-serif;
     line-height: 1.8;
 
     letter-spacing:
@@ -1349,7 +1342,7 @@
     display: flex;
 
     flex-direction: column;
-
+    font-family: "AntiSlab", sans-serif;
     align-items: flex-start;
 
     gap: 12px;
@@ -1364,7 +1357,7 @@
     color: #444549;
 
     font-size: 8px;
-
+    font-family: monospace;
     letter-spacing:
         0.18em;
 }
@@ -1414,7 +1407,7 @@
 
 .footer-column a:hover {
 
-    color: #e6e6e8;
+    color: var(--red-text);
 
     transform:
         translateX(5px);
@@ -1442,7 +1435,7 @@
     color: #aaa;
 
     font-size: 9px;
-
+    font-family: "AntiSlab", sans-serif;
     letter-spacing:
         0.08em;
 }
@@ -1487,7 +1480,7 @@
 ========================================================= */
 
 .footer-bottom {
-
+    font-family: monospace;
     position: relative;
 
     z-index: 2;
@@ -1509,7 +1502,7 @@
 
     gap: 25px;
 
-    color: #3f4044;
+    color: var(--red-text);
 
     font-size: 7px;
 
@@ -1932,4 +1925,37 @@
             1fr;
     }
 
+}
+
+@media (max-width: 600px) {
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .footer-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-brand p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-column {
+        align-items: center;
+    }
+
+    .availability-status {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        align-items: center;
+        text-align: center;
+    }
 }
