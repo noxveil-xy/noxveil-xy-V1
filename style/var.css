@@ -1,11 +1,9 @@
-:root{
-    --white-back: #D5DADE;
-    --black-back: #080707;
-    --black-back-light: rgba(151, 133, 133, 0.035);
-    --line-color-botom: 
-        1px solid
-        rgba(150, 142, 142, 0.265);
-    --red-text: #ef1e56;
-    --black-text: #242427;
-    --gray-text: #555;
+:root {
+  --white-back: #d5dade;
+  --black-back: #080707;
+  --black-back-light: rgba(151, 133, 133, 0.035);
+  --line-color-botom: 1px solid rgba(150, 142, 142, 0.265);
+  --red-text: #ef1e56;
+  --black-text: #242427;
+  --gray-text: #555;
 }

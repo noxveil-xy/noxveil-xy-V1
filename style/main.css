@@ -10,29 +10,28 @@
 @import url("./feedback.css");
 @import url("./footer.css");
 
-
-html, body{
-    background-color: var(--white-back);
+html,
+body {
+  background-color: var(--white-back);
 }
 
-
-@media (min-width: 1281px){
-    .nav-menu-mobile{
-        display: none;
-    }
+@media (min-width: 1281px) {
+  .nav-menu-mobile {
+    display: none;
+  }
 }
-@media (min-width: 1025px) and (max-width: 1280px){
-    .nav-menu-mobile{
-        display: none;
-    }
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .nav-menu-mobile {
+    display: none;
+  }
 }
-@media (min-width: 765px) and (max-width: 1024px){
-    .nav-menu{
-        display: none;
-    }
+@media (min-width: 765px) and (max-width: 1024px) {
+  .nav-menu {
+    display: none;
+  }
 }
-@media (max-width: 767px){
-    .nav-menu{
-        display: none;
-    }
+@media (max-width: 767px) {
+  .nav-menu {
+    display: none;
+  }
 }

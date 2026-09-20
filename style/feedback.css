@@ -5,14 +5,14 @@
    ========================================================= */
 
 .contact {
-    position: relative;
-    padding: 130px 6vw 40px;
-    background: #050506;
-    color: #eeeeef;
-    overflow: hidden;
+  position: relative;
+  padding: 130px 6vw 40px;
+  background: #050506;
+  color: #eeeeef;
+  overflow: hidden;
 }
-.contact-title{
-    font-family: "IBMPL", sans-serif;
+.contact-title {
+  font-family: "IBMPL", sans-serif;
 }
 
 /* =========================================================
@@ -20,539 +20,474 @@
    ========================================================= */
 
 .contact-grid-bg {
-    position: absolute;
+  position: absolute;
 
-    inset: 0;
+  inset: 0;
 
-    background-size: 55px 55px;
+  background-size: 55px 55px;
 
-    mask-image:
-        linear-gradient(
-            to bottom,
-            black,
-            transparent 90%
-        );
+  mask-image: linear-gradient(to bottom, black, transparent 90%);
 
-    pointer-events: none;
+  pointer-events: none;
 }
-
 
 .contact-glow {
-    position: absolute;
+  position: absolute;
 
-    top: -250px;
-    right: 5%;
+  top: -250px;
+  right: 5%;
 
-    width: 600px;
-    height: 500px;
+  width: 600px;
+  height: 500px;
 
-    background: rgba(255, 255, 255, 0.035);
+  background: rgba(255, 255, 255, 0.035);
 
-    filter: blur(130px);
+  filter: blur(130px);
 
-    pointer-events: none;
+  pointer-events: none;
 }
-
 
 /* =========================================================
    MARKER
    ========================================================= */
 
 .contact-marker {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 
-    max-width: 1400px;
+  max-width: 1400px;
 
-    margin: 0 auto 100px;
+  margin: 0 auto 100px;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    padding-bottom: 18px;
+  padding-bottom: 18px;
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
-    color: #707075;
+  color: #707075;
 
-    font-size: 0.72rem;
-    font-weight: 600;
+  font-size: 0.72rem;
+  font-weight: 600;
 
-    letter-spacing: 0.16em;
+  letter-spacing: 0.16em;
 }
-
 
 /* =========================================================
    CONTAINER
    ========================================================= */
 
 .contact-container {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 
-    max-width: 1400px;
+  max-width: 1400px;
 
-    margin: 0 auto;
+  margin: 0 auto;
 
-    display: grid;
+  display: grid;
 
-    grid-template-columns:
-        minmax(300px, 0.8fr)
-        minmax(500px, 1.2fr);
+  grid-template-columns:
+    minmax(300px, 0.8fr)
+    minmax(500px, 1.2fr);
 
-    gap: clamp(60px, 9vw, 150px);
+  gap: clamp(60px, 9vw, 150px);
 
-    align-items: start;
+  align-items: start;
 }
-
 
 /* =========================================================
    LEFT SIDE
    ========================================================= */
 
 .contact-info {
-    padding-top: 15px;
+  padding-top: 15px;
 }
 
 .contact-label {
-    font-family: monospace;
-    margin-bottom: 25px;
+  font-family: monospace;
+  margin-bottom: 25px;
 
-    color: #77777c;
+  color: #77777c;
 
-    font-size: 0.7rem;
-    font-weight: 600;
+  font-size: 0.7rem;
+  font-weight: 600;
 
-    letter-spacing: 0.16em;
+  letter-spacing: 0.16em;
 }
 
-
 .contact-title {
-    margin: 0;
+  margin: 0;
 
-    font-size: clamp(4rem, 7vw, 7rem);
+  font-size: clamp(4rem, 7vw, 7rem);
 
-    line-height: 0.88;
+  line-height: 0.88;
 
-    font-weight: 500;
+  font-weight: 500;
 
-    letter-spacing: -0.055em;
+  letter-spacing: -0.055em;
 
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .contact-title span {
-    display: block;
+  display: block;
 
-    color: transparent;
+  color: transparent;
 
-    -webkit-text-stroke:
-        1px rgba(255, 255, 255, 0.65);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.65);
 }
-
 
 .contact-description {
-    font-family: "AntiSlab", sans-serif;
-    max-width: 540px;
+  font-family: "AntiSlab", sans-serif;
+  max-width: 540px;
 
-    margin: 35px 0 0;
+  margin: 35px 0 0;
 
-    color: #85858a;
+  color: #85858a;
 
-    font-size: 0.92rem;
+  font-size: 0.92rem;
 
-    line-height: 1.8;
+  line-height: 1.8;
 }
-
 
 /* =========================================================
    CONTACT CHANNELS
    ========================================================= */
 
 .contact-channels {
-    margin-top: 55px;
+  margin-top: 55px;
 
-    border-top:
-        1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-
 
 .contact-channel {
-    display: grid;
+  display: grid;
 
-    grid-template-columns:
-        45px 1fr auto;
+  grid-template-columns: 45px 1fr auto;
 
-    align-items: center;
+  align-items: center;
 
-    gap: 20px;
+  gap: 20px;
 
-    min-height: 82px;
+  min-height: 82px;
 
-    padding: 12px 5px;
+  padding: 12px 5px;
 
-    border-bottom:
-        1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
-    color: #eeeeef;
+  color: #eeeeef;
 
-    text-decoration: none;
+  text-decoration: none;
 
-    transition:
-        background 0.3s ease,
-        padding 0.3s ease;
+  transition:
+    background 0.3s ease,
+    padding 0.3s ease;
 }
-
 
 .contact-channel:hover {
-    padding-left: 15px;
+  padding-left: 15px;
 
-    background:
-        rgba(255, 255, 255, 0.035);
+  background: rgba(255, 255, 255, 0.035);
 }
-
 
 .channel-number {
-    color: #505056;
+  color: #505056;
 
-    font-size: 0.65rem;
+  font-size: 0.65rem;
 
-    letter-spacing: 0.1em;
+  letter-spacing: 0.1em;
 }
-
 
 .contact-channel small {
-    font-family: monospace;
-    display: block;
+  font-family: monospace;
+  display: block;
 
-    margin-bottom: 6px;
+  margin-bottom: 6px;
 
-    color: #66666b;
+  color: #66666b;
 
-    font-size: 0.58rem;
+  font-size: 0.58rem;
 
-    letter-spacing: 0.15em;
+  letter-spacing: 0.15em;
 }
-
 
 .contact-channel strong {
-    color: var(--red-text);
-    font-family: "AntiSlab", sans-serif;
+  color: var(--red-text);
+  font-family: "AntiSlab", sans-serif;
 
-    font-size: 0.82rem;
+  font-size: 0.82rem;
 
-    font-weight: 500;
+  font-weight: 500;
 
-    letter-spacing: 0.02em;
+  letter-spacing: 0.02em;
 }
-
 
 .channel-arrow {
-    color: #77777c;
+  color: #77777c;
 
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 
-    transition:
-        transform 0.3s ease,
-        color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
 }
-
 
 .contact-channel:hover .channel-arrow {
-    color: #eeeeef;
+  color: #eeeeef;
 
-    transform:
-        translate(3px, -3px);
+  transform: translate(3px, -3px);
 }
-
 
 /* =========================================================
    FORM
    ========================================================= */
 
 .contact-form-wrapper {
-    position: relative;
+  position: relative;
 
-    background: #0b0b0c;
+  background: #0b0b0c;
 
-    border:
-        1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 
-    box-shadow:
-        0 30px 80px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
 }
-
 
 /* =========================================================
    FORM HEADER
    ========================================================= */
 
 .form-header {
-    display: flex;
+  display: flex;
 
-    justify-content: space-between;
-    align-items: flex-start;
+  justify-content: space-between;
+  align-items: flex-start;
 
-    gap: 30px;
+  gap: 30px;
 
-    padding: 32px 35px;
+  padding: 32px 35px;
 
-    border-bottom:
-        1px solid rgba(255, 255, 255, 0.09);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
 }
-
 
 .form-overline {
-    display: block;
-    font-family: "AntiSlab", sans-serif;
+  display: block;
+  font-family: "AntiSlab", sans-serif;
 
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 
-    color: #68686d;
+  color: #68686d;
 
-    font-size: 0.62rem;
+  font-size: 0.62rem;
 
-    letter-spacing: 0.16em;
+  letter-spacing: 0.16em;
 }
-
 
 .form-header h3 {
-    font-family: "IBMPL", sans-serif;
-    margin: 0;
+  font-family: "IBMPL", sans-serif;
+  margin: 0;
 
-    color: #eeeeef;
+  color: #eeeeef;
 
-    font-size: 1.45rem;
+  font-size: 1.45rem;
 
-    font-weight: 500;
+  font-weight: 500;
 
-    letter-spacing: 0.02em;
+  letter-spacing: 0.02em;
 }
-
 
 .form-status {
-    font-family: monospace;
-    display: flex;
-    align-items: center;
+  font-family: monospace;
+  display: flex;
+  align-items: center;
 
-    gap: 8px;
+  gap: 8px;
 
-    padding-top: 5px;
+  padding-top: 5px;
 
-    color: #77777c;
+  color: #77777c;
 
-    font-size: 0.58rem;
+  font-size: 0.58rem;
 
-    letter-spacing: 0.13em;
+  letter-spacing: 0.13em;
 
-    white-space: nowrap;
+  white-space: nowrap;
 }
-
 
 .form-status span {
-    width: 6px;
-    height: 6px;
+  width: 6px;
+  height: 6px;
 
-    border-radius: 50%;
+  border-radius: 50%;
 
-    background: #dcdcdc;
+  background: #dcdcdc;
 
-    box-shadow:
-        0 0 10px rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
 
-    animation:
-        contactPulse 2s infinite;
+  animation: contactPulse 2s infinite;
 }
-
 
 @keyframes contactPulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
 
-    0%,
-    100% {
-        opacity: 0.5;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
+  50% {
+    opacity: 1;
+  }
 }
-
 
 /* =========================================================
    FORM CONTENT
    ========================================================= */
 
 .contact-form {
-    padding: 35px;
+  padding: 35px;
 }
-
 
 .form-row {
-    display: grid;
+  display: grid;
 
-    grid-template-columns:
-        repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 
-    gap: 20px;
+  gap: 20px;
 }
-
 
 .form-field {
-    font-family: monospace;
-    display: flex;
-    flex-direction: column;
+  font-family: monospace;
+  display: flex;
+  flex-direction: column;
 
-    gap: 10px;
+  gap: 10px;
 
-    margin-bottom: 24px;
+  margin-bottom: 24px;
 }
-
 
 .form-field label {
-    color: #77777c;
+  color: #77777c;
 
-    font-size: 0.62rem;
+  font-size: 0.62rem;
 
-    font-weight: 600;
+  font-weight: 600;
 
-    letter-spacing: 0.14em;
+  letter-spacing: 0.14em;
 }
-
 
 .form-field input,
 .form-field select,
 .form-field textarea {
+  width: 100%;
 
-    width: 100%;
+  box-sizing: border-box;
 
-    box-sizing: border-box;
+  padding: 15px 16px;
 
-    padding: 15px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 
-    border:
-        1px solid rgba(255, 255, 255, 0.1);
+  outline: none;
 
-    outline: none;
+  background: #070708;
 
-    background: #070708;
+  color: #eeeeef;
 
-    color: #eeeeef;
+  font-family: inherit;
 
-    font-family: inherit;
+  font-size: 0.82rem;
 
-    font-size: 0.82rem;
-
-    transition:
-        border-color 0.3s ease,
-        background 0.3s ease,
-        box-shadow 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
-
 
 .form-field input::placeholder,
 .form-field textarea::placeholder {
-    color: var(--red-text);
+  color: var(--red-text);
 }
-
 
 .form-field select {
-    color: var(--red-text);
+  color: var(--red-text);
 
-    cursor: pointer;
+  cursor: pointer;
 }
-
 
 .form-field select option {
-    background: #0b0b0c;
+  background: #0b0b0c;
 
-    color: #eeeeef;
+  color: #eeeeef;
 }
-
 
 .form-field textarea {
-    resize: vertical;
+  resize: vertical;
 
-    min-height: 150px;
+  min-height: 150px;
 
-    line-height: 1.6;
+  line-height: 1.6;
 }
-
 
 .form-field input:hover,
 .form-field select:hover,
 .form-field textarea:hover {
-
-    border-color:
-        rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.18);
 }
-
 
 .form-field input:focus,
 .form-field select:focus,
 .form-field textarea:focus {
+  border-color: rgba(255, 255, 255, 0.4);
 
-    border-color:
-        rgba(255, 255, 255, 0.4);
+  background: #09090a;
 
-    background: #09090a;
-
-    box-shadow:
-        0 0 0 3px
-        rgba(255, 255, 255, 0.025);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.025);
 }
-
 
 /* =========================================================
    FORM FOOTER
    ========================================================= */
 
 .form-footer {
+  display: flex;
 
-    display: flex;
+  justify-content: space-between;
 
-    justify-content: space-between;
+  align-items: center;
 
-    align-items: center;
+  gap: 30px;
 
-    gap: 30px;
-
-    padding-top: 10px;
+  padding-top: 10px;
 }
-
 
 .form-security {
-    font-family: "AntiSlab", sans-serif;
-    display: flex;
+  font-family: "AntiSlab", sans-serif;
+  display: flex;
 
-    align-items: center;
+  align-items: center;
 
-    gap: 10px;
+  gap: 10px;
 
-    max-width: 270px;
+  max-width: 270px;
 
-    color: #55555a;
+  color: #55555a;
 
-    font-size: 0.57rem;
+  font-size: 0.57rem;
 
-    line-height: 1.5;
+  line-height: 1.5;
 
-    letter-spacing: 0.08em;
+  letter-spacing: 0.08em;
 }
 
-
 .security-indicator {
-    flex-shrink: 0;
+  flex-shrink: 0;
 
-    width: 7px;
-    height: 7px;
+  width: 7px;
+  height: 7px;
 
-    border: 1px solid #77777c;
+  border: 1px solid #77777c;
 
-    box-shadow:
-        inset 0 0 5px
-        rgba(255, 255, 255, 0.15);
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.15);
 }
 
 /* =========================================================
@@ -560,205 +495,164 @@
    ========================================================= */
 
 .contact-submit {
-    display: flex;
-    font-family: "AntiSlab", sans-serif;
+  display: flex;
+  font-family: "AntiSlab", sans-serif;
 
-    align-items: center;
+  align-items: center;
 
-    gap: 30px;
+  gap: 30px;
 
-    padding: 17px 22px;
+  padding: 17px 22px;
 
-    border:
-        1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.25);
 
-    background: #eeeeef;
+  background: #eeeeef;
 
-    color: #080809;
+  color: #080809;
 
-    font-family: inherit;
+  font-family: inherit;
 
-    font-size: 0.68rem;
+  font-size: 0.68rem;
 
-    font-weight: 600;
+  font-weight: 600;
 
-    letter-spacing: 0.13em;
+  letter-spacing: 0.13em;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        border-color 0.3s ease,
-        transform 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
 }
-
 
 .contact-submit:hover {
+  background: transparent;
 
-    background: transparent;
+  color: #eeeeef;
 
-    color: #eeeeef;
+  border-color: rgba(255, 255, 255, 0.5);
 
-    border-color:
-        rgba(255, 255, 255, 0.5);
-
-    transform:
-        translateY(-2px);
+  transform: translateY(-2px);
 }
-
 
 .submit-arrow {
+  font-size: 1.1rem;
 
-    font-size: 1.1rem;
-
-    transition:
-        transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
-
 
 .contact-submit:hover .submit-arrow {
-
-    transform:
-        translateX(5px);
+  transform: translateX(5px);
 }
-
 
 /* =========================================================
    BOTTOM
    ========================================================= */
 
 .contact-bottom {
-    font-family: monospace;
-    position: relative;
-    z-index: 1;
+  font-family: monospace;
+  position: relative;
+  z-index: 1;
 
-    max-width: 1400px;
+  max-width: 1400px;
 
-    margin: 100px auto 0;
+  margin: 100px auto 0;
 
-    padding-top: 20px;
+  padding-top: 20px;
 
-    display: flex;
+  display: flex;
 
-    justify-content: space-between;
+  justify-content: space-between;
 
-    border-top:
-        1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 
-    color: #48484d;
+  color: #48484d;
 
-    font-size: 0.58rem;
+  font-size: 0.58rem;
 
-    letter-spacing: 0.14em;
+  letter-spacing: 0.14em;
 }
-
 
 /* =========================================================
    RESPONSIVE
    ========================================================= */
 
 @media (max-width: 1000px) {
+  .contact-container {
+    grid-template-columns: 1fr;
 
-    .contact-container {
+    gap: 80px;
+  }
 
-        grid-template-columns: 1fr;
-
-        gap: 80px;
-    }
-
-    .contact-info {
-        max-width: 800px;
-    }
-
+  .contact-info {
+    max-width: 800px;
+  }
 }
-
 
 @media (max-width: 700px) {
+  .contact {
+    padding: 90px 5vw 35px;
+  }
 
-    .contact {
+  .contact-marker {
+    margin-bottom: 65px;
+  }
 
-        padding: 90px 5vw 35px;
-    }
+  .contact-title {
+    font-size: clamp(3.5rem, 16vw, 5rem);
+  }
 
-    .contact-marker {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
 
-        margin-bottom: 65px;
-    }
+  .form-header {
+    flex-direction: column;
 
-    .contact-title {
+    padding: 25px;
+  }
 
-        font-size: clamp(
-            3.5rem,
-            16vw,
-            5rem
-        );
-    }
+  .contact-form {
+    padding: 25px;
+  }
 
-    .form-row {
+  .form-footer {
+    flex-direction: column;
 
-        grid-template-columns: 1fr;
-    }
+    align-items: stretch;
+  }
 
-    .form-header {
+  .form-security {
+    max-width: none;
+  }
 
-        flex-direction: column;
+  .contact-submit {
+    justify-content: space-between;
+  }
 
-        padding: 25px;
-    }
+  .contact-bottom {
+    flex-direction: column;
 
-    .contact-form {
+    gap: 10px;
 
-        padding: 25px;
-    }
-
-    .form-footer {
-
-        flex-direction: column;
-
-        align-items: stretch;
-    }
-
-    .form-security {
-
-        max-width: none;
-    }
-
-    .contact-submit {
-
-        justify-content: space-between;
-    }
-
-    .contact-bottom {
-
-        flex-direction: column;
-
-        gap: 10px;
-
-        margin-top: 70px;
-    }
-
+    margin-top: 70px;
+  }
 }
 
-
 @media (max-width: 480px) {
+  .contact-title {
+    font-size: 3.2rem;
+  }
 
-    .contact-title {
+  .contact-channel {
+    grid-template-columns: 30px 1fr auto;
 
-        font-size: 3.2rem;
-    }
+    gap: 12px;
+  }
 
-    .contact-channel {
-
-        grid-template-columns:
-            30px 1fr auto;
-
-        gap: 12px;
-    }
-
-    .contact-channel strong {
-
-        font-size: 0.72rem;
-    }
-
+  .contact-channel strong {
+    font-size: 0.72rem;
+  }
 }

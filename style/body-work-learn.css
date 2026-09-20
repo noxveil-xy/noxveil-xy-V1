@@ -5,627 +5,595 @@
    ========================================================= */
 
 .career {
-    position: relative;
-    overflow: hidden;
-    padding: 130px 6vw 160px;
-    background: var(--white-back);
-    color: #080809;
+  position: relative;
+  overflow: hidden;
+  padding: 130px 6vw 160px;
+  background: var(--white-back);
+  color: #080809;
 }
 
 .career-grid-bg {
-    position: absolute;
-    inset: 0;
-    background-size: 55px 55px;
+  position: absolute;
+  inset: 0;
+  background-size: 55px 55px;
 
-    mask-image:
-        linear-gradient(
-            to bottom,
-            black,
-            transparent 90%
-        );
+  mask-image: linear-gradient(to bottom, black, transparent 90%);
 
-    pointer-events: none;
+  pointer-events: none;
 }
 
 .career-marker {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 
-    max-width: 1400px;
-    margin: 0 auto 90px;
+  max-width: 1400px;
+  margin: 0 auto 90px;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    padding-bottom: 18px;
+  padding-bottom: 18px;
 
-    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 
-    color: #66666a;
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.16em;
+  color: #66666a;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
 }
 
 .career-container {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 
-    max-width: 1400px;
-    margin: 0 auto;
+  max-width: 1400px;
+  margin: 0 auto;
 }
-
 
 /* =========================================================
    SECTION HEADER
    ========================================================= */
 
 .career-header {
-    max-width: 900px;
-    margin-bottom: 70px;
+  max-width: 900px;
+  margin-bottom: 70px;
 }
 
 .career-label {
-    font-family: monospace;
-    margin-bottom: 22px;
+  font-family: monospace;
+  margin-bottom: 22px;
 
-    color: #77777b;
+  color: #77777b;
 
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
 }
 
 .career-title {
-    font-family: "IBMPL", sans-serif;
-    margin: 0;
+  font-family: "IBMPL", sans-serif;
+  margin: 0;
 
-    font-size: clamp(2.7rem, 6vw, 6rem);
-    line-height: 0.95;
-    font-weight: 500;
-    letter-spacing: -0.04em;
-    text-transform: uppercase;
+  font-size: clamp(2.7rem, 6vw, 6rem);
+  line-height: 0.95;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
 }
 
 .career-title span {
-    color: var(--gray-text);
+  color: var(--gray-text);
 }
 
 .career-intro {
-    font-family: "AntiSlab", sans-serif;
-    max-width: 680px;
+  font-family: "AntiSlab", sans-serif;
+  max-width: 680px;
 
-    margin-top: 35px;
+  margin-top: 35px;
 
-    color: #66666a;
+  color: #66666a;
 
-    font-size: 1rem;
-    line-height: 1.8;
+  font-size: 1rem;
+  line-height: 1.8;
 }
-
 
 /* =========================================================
    EXPERIENCE
    ========================================================= */
 
 .experience-card {
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    font-family: "IBMPL", sans-serif;
-    margin-bottom: 150px;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  font-family: "IBMPL", sans-serif;
+  margin-bottom: 150px;
 
-    background: #080809;
-    color: #e9e9ea;
+  background: #080809;
+  color: #e9e9ea;
 
-    border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.12);
 
-    box-shadow:
-        0 30px 70px rgba(0, 0, 0, 0.14);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.14);
 }
-
 
 /* LEFT SIDE */
 
 .experience-sidebar {
-    position: relative;
+  position: relative;
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    justify-content: space-between;
+  justify-content: space-between;
 
-    min-height: 100%;
+  min-height: 100%;
 
-    padding: 35px;
+  padding: 35px;
 
-    border-right: 1px solid rgba(255, 255, 255, 0.09);
+  border-right: 1px solid rgba(255, 255, 255, 0.09);
 }
 
 .experience-number {
-    font-size: 4rem;
-    font-weight: 300;
+  font-size: 4rem;
+  font-weight: 300;
 
-    color: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.12);
 
-    letter-spacing: -0.05em;
+  letter-spacing: -0.05em;
 }
 
 .experience-date {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    gap: 5px;
+  gap: 5px;
 
-    color: #99999d;
+  color: #99999d;
 
-    font-size: 0.72rem;
-    letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
 }
 
 .experience-date span {
-    color: #444449;
+  color: #444449;
 }
 
 .experience-type {
-    padding-top: 25px;
+  padding-top: 25px;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 
-    color: #77777c;
+  color: #77777c;
 
-    font-size: 0.68rem;
-    line-height: 1.6;
+  font-size: 0.68rem;
+  line-height: 1.6;
 
-    letter-spacing: 0.14em;
+  letter-spacing: 0.14em;
 }
-
 
 /* MAIN */
 
 .experience-main {
-    padding: 55px;
+  padding: 55px;
 }
 
 .experience-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 
-    gap: 30px;
+  gap: 30px;
 
-    padding-bottom: 45px;
+  padding-bottom: 45px;
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .experience-overline {
-    display: block;
+  display: block;
 
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 
-    color: #77777c;
+  color: #77777c;
 
-    font-size: 0.68rem;
-    letter-spacing: 0.15em;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
 }
 
 .experience-heading h3 {
-    margin: 0;
+  margin: 0;
 
-    color: var(--white-back);
+  color: var(--white-back);
 
-    font-size: clamp(1.8rem, 3vw, 3rem);
-    font-weight: 500;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-weight: 500;
 }
 
 .experience-heading p {
-    margin: 10px 0 0;
+  margin: 10px 0 0;
 
-    color: #8a8a8f;
+  color: #8a8a8f;
 
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 
 .experience-status {
-    display: flex;
-    align-items: center;
-    gap: 9px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
 
-    color: #858589;
+  color: #858589;
 
-    font-size: 0.65rem;
-    letter-spacing: 0.14em;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
 }
 
 .experience-status span {
-    width: 7px;
-    height: 7px;
+  width: 7px;
+  height: 7px;
 
-    border-radius: 50%;
+  border-radius: 50%;
 
-    background: #d7d7d7;
+  background: #d7d7d7;
 
-    box-shadow:
-        0 0 12px rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
 }
-
 
 /* EXPERIENCE BLOCKS */
 
 .experience-block {
-    padding: 40px 0;
+  padding: 40px 0;
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .experience-block-title {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    gap: 18px;
+  gap: 18px;
 
-    margin-bottom: 25px;
+  margin-bottom: 25px;
 
-    color: var(--red-text);
+  color: var(--red-text);
 
-    font-size: 0.75rem;
-    font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 600;
 
-    letter-spacing: 0.15em;
+  letter-spacing: 0.15em;
 }
 
 .experience-block-title span {
-    color: #66666b;
+  color: #66666b;
 }
 
 .experience-block ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 
-    gap: 15px 40px;
+  gap: 15px 40px;
 
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 
-    list-style: none;
+  list-style: none;
 }
 
 .experience-block li {
-    position: relative;
+  position: relative;
 
-    padding-left: 20px;
+  padding-left: 20px;
 
-    color: #96969b;
+  color: #96969b;
 
-    font-size: 0.87rem;
-    line-height: 1.75;
+  font-size: 0.87rem;
+  line-height: 1.75;
 }
 
 .experience-block li::before {
-    content: "";
+  content: "";
 
-    position: absolute;
+  position: absolute;
 
-    left: 0;
-    top: 0.72em;
+  left: 0;
+  top: 0.72em;
 
-    width: 6px;
-    height: 1px;
+  width: 6px;
+  height: 1px;
 
-    background: #bdbdc0;
+  background: #bdbdc0;
 }
-
 
 /* EXPERIENCE STACK */
 
 .experience-stack {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 
-    gap: 8px;
+  gap: 8px;
 
-    padding-top: 35px;
+  padding-top: 35px;
 }
 
 .experience-stack span {
-    padding: 9px 12px;
+  padding: 9px 12px;
 
-    border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 
-    color: #77777c;
+  color: #77777c;
 
-    font-size: 0.62rem;
-    letter-spacing: 0.1em;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
 
-    transition:
-        border-color 0.3s ease,
-        color 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .experience-stack span:hover {
-    color: #eeeeef;
+  color: #eeeeef;
 
-    border-color: rgba(255, 255, 255, 0.35);
+  border-color: rgba(255, 255, 255, 0.35);
 }
-
 
 /* =========================================================
    EDUCATION
    ========================================================= */
 
 .education-header {
-    margin-bottom: 55px;
+  margin-bottom: 55px;
 }
 
 .education-grid {
-    display: grid;
+  display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 
-    gap: 20px;
+  gap: 20px;
 
-    margin-bottom: 150px;
+  margin-bottom: 150px;
 }
 
 .education-card {
-    font-family: "AntiSlab", sans-serif;
-    position: relative;
+  font-family: "AntiSlab", sans-serif;
+  position: relative;
 
-    min-height: 360px;
+  min-height: 360px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-    padding: 35px;
+  padding: 35px;
 
-    background: var(--black-back);
+  background: var(--black-back);
 
-    border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 
-    overflow: hidden;
+  overflow: hidden;
 
-    transition:
-        transform 0.35s ease,
-        background 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease;
 }
 
 .education-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .education-active {
-    background: #080809;
-    color: #eeeeef;
+  background: #080809;
+  color: #eeeeef;
 }
 
 .education-active:hover {
-    background: #080809;
+  background: #080809;
 }
 
 .education-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .education-number {
-    font-family: monospace;
-    color: var(--red-text);
-    font-size: 2.5rem;
-    font-weight: 300;
-
+  font-family: monospace;
+  color: var(--red-text);
+  font-size: 2.5rem;
+  font-weight: 300;
 }
-.education-number-1{
-    font-family: monospace;
-    color: var(--red-text);
-    font-size: 2.5rem;
-    font-weight: 300;
+.education-number-1 {
+  font-family: monospace;
+  color: var(--red-text);
+  font-size: 2.5rem;
+  font-weight: 300;
 }
 .education-active .education-number {
-    color: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.14);
 }
 
 .education-status {
-    font-family: monospace;
-    font-size: 0.62rem;
-    letter-spacing: 0.14em;
+  font-family: monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
 
-    color: var(--red-text);
+  color: var(--red-text);
 }
 
 .education-active .education-status {
-    color: var(--red-text);
+  color: var(--red-text);
 }
 
 .education-overline {
-    font-family: monospace;
-    display: block;
+  font-family: monospace;
+  display: block;
 
-    margin-bottom: 18px;
+  margin-bottom: 18px;
 
-    color: #77777b;
+  color: #77777b;
 
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
 }
 
 .education-content h3 {
-    font-family: "IBMPL", sans-serif;
-    color: var(--white-back);
-    max-width: 500px;
+  font-family: "IBMPL", sans-serif;
+  color: var(--white-back);
+  max-width: 500px;
 
-    margin: 0;
+  margin: 0;
 
-    font-size: clamp(1.7rem, 3vw, 2.6rem);
-    line-height: 1.05;
-    font-weight: 500;
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  line-height: 1.05;
+  font-weight: 500;
 }
 
 .education-form {
-    font-family: "AntiSlab", sans-serif;
-    margin: 18px 0 0;
+  font-family: "AntiSlab", sans-serif;
+  margin: 18px 0 0;
 
-    color: #77777b;
+  color: #77777b;
 
-    font-size: 0.8rem;
-    line-height: 1.6;
+  font-size: 0.8rem;
+  line-height: 1.6;
 }
 
 .education-place {
-    font-family: "AntiSlab", sans-serif;
-    max-width: 500px;
+  font-family: "AntiSlab", sans-serif;
+  max-width: 500px;
 
-    margin: 15px 0 0;
+  margin: 15px 0 0;
 
-    color: #77777b;
+  color: #77777b;
 
-    font-size: 0.85rem;
-    line-height: 1.6;
+  font-size: 0.85rem;
+  line-height: 1.6;
 }
 
 .education-active .education-content h3 {
-    color: #eeeeef;
+  color: #eeeeef;
 }
 
 .education-active .education-form,
 .education-active .education-place {
-    color: #89898e;
+  color: #89898e;
 }
 
 .education-line {
-    position: absolute;
+  position: absolute;
 
-    left: 35px;
-    bottom: 0;
+  left: 35px;
+  bottom: 0;
 
-    width: 80px;
-    height: 2px;
+  width: 80px;
+  height: 2px;
 
-    background: #111113;
+  background: #111113;
 
-    transition: width 0.4s ease;
+  transition: width 0.4s ease;
 }
 
 .education-card:hover .education-line {
-    width: 180px;
+  width: 180px;
 }
 
 /* .education-active .education-line {
     background: #ed5c5c;
 } */
 
-
 /* =========================================================
    CERTIFICATES
    ========================================================= */
 
 .certificates-header {
-    margin-bottom: 55px;
+  margin-bottom: 55px;
 }
 
 .certificates-grid {
-    display: grid;
+  display: grid;
 
-    grid-template-columns:
-        repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 
-    gap: 20px;
+  gap: 20px;
 }
 
 .certificate-card {
-    background: #080809;
+  background: #080809;
 
-    color: #eeeeef;
+  color: #eeeeef;
 
-    border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.12);
 
-    overflow: hidden;
+  overflow: hidden;
 
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .certificate-card:hover {
-    transform: translateY(-6px);
+  transform: translateY(-6px);
 
-    box-shadow:
-        0 25px 50px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.16);
 }
-
 
 /* CERTIFICATE IMAGE */
 
 .certificate-image {
-    position: relative;
+  position: relative;
 
-    height: 260px;
+  height: 260px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #171719,
-            #09090a
-        );
+  background: linear-gradient(135deg, #171719, #09090a);
 
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .certificate-image::before {
-    content: "";
+  content: "";
 
-    position: absolute;
-    inset: 0;
+  position: absolute;
+  inset: 0;
 
-    background-image:
-        linear-gradient(
-            rgba(255, 255, 255, 0.025) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255, 255, 255, 0.025) 1px,
-            transparent 1px
-        );
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
 
-    background-size: 30px 30px;
+  background-size: 30px 30px;
 }
 
 .certificate-placeholder {
-    position: absolute;
+  position: absolute;
 
-    inset: 30px;
+  inset: 30px;
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 
-    gap: 12px;
+  gap: 12px;
 
-    border: 1px dashed rgba(255, 255, 255, 0.16);
+  border: 1px dashed rgba(255, 255, 255, 0.16);
 
-    color: #55555a;
+  color: #55555a;
 
-    text-align: center;
+  text-align: center;
 }
 
 .certificate-placeholder span {
-    font-size: 3rem;
-    font-weight: 300;
+  font-size: 3rem;
+  font-weight: 300;
 
-    color: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.12);
 }
 
 .certificate-placeholder small {
-    font-size: 0.6rem;
+  font-size: 0.6rem;
 
-    letter-spacing: 0.16em;
+  letter-spacing: 0.16em;
 }
-
 
 /*
    Когда появится реальный сертификат:
@@ -637,210 +605,200 @@
 */
 
 .certificate-image img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    display: block;
+  display: block;
 
-    object-fit: cover;
+  object-fit: cover;
 
-    transition:
-        transform 0.6s ease,
-        filter 0.6s ease;
+  transition:
+    transform 0.6s ease,
+    filter 0.6s ease;
 }
 
 .certificate-card:hover .certificate-image img {
-    transform: scale(1.04);
+  transform: scale(1.04);
 
-    filter: brightness(1.08);
+  filter: brightness(1.08);
 }
-
 
 /* CERTIFICATE INFO */
 
 .certificate-info {
-    font-family: monospace;
-    padding: 28px;
+  font-family: monospace;
+  padding: 28px;
 }
 
 .certificate-meta {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 
-    margin-bottom: 25px;
+  margin-bottom: 25px;
 
-    color: var(--red-text);
+  color: var(--red-text);
 
-    font-size: 0.62rem;
-    letter-spacing: 0.13em;
+  font-size: 0.62rem;
+  letter-spacing: 0.13em;
 }
 
 .certificate-info h3 {
-    font-family: "IBMPL", sans-serif;
-    margin: 0;
+  font-family: "IBMPL", sans-serif;
+  margin: 0;
 
-    color: #eeeeef;
+  color: #eeeeef;
 
-    font-size: 1.25rem;
-    font-weight: 500;
-    line-height: 1.2;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.2;
 }
 
 .certificate-info p {
-    font-family: "AntiSlab", sans-serif;
-    margin: 12px 0 0;
+  font-family: "AntiSlab", sans-serif;
+  margin: 12px 0 0;
 
-    color: #77777c;
+  color: #77777c;
 
-    font-size: 0.8rem;
-    line-height: 1.5;
+  font-size: 0.8rem;
+  line-height: 1.5;
 }
-
 
 /* =========================================================
    RESPONSIVE
    ========================================================= */
 
 @media (max-width: 1000px) {
+  .experience-card {
+    grid-template-columns: 1fr;
+  }
 
-    .experience-card {
-        grid-template-columns: 1fr;
-    }
+  .experience-sidebar {
+    min-height: auto;
 
-    .experience-sidebar {
-        min-height: auto;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
 
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        align-items: center;
+    gap: 30px;
 
-        gap: 30px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  }
 
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.09);
-    }
+  .experience-type {
+    padding-top: 0;
 
-    .experience-type {
-        padding-top: 0;
+    border-top: none;
+  }
 
-        border-top: none;
-    }
+  .experience-block ul {
+    grid-template-columns: 1fr;
+  }
 
-    .experience-block ul {
-        grid-template-columns: 1fr;
-    }
-
-    .certificates-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
+  .certificates-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-
 
 @media (max-width: 760px) {
+  .career {
+    padding: 90px 5vw 110px;
+  }
 
-    .career {
-        padding: 90px 5vw 110px;
-    }
+  .career-marker {
+    margin-bottom: 60px;
 
-    .career-marker {
-        margin-bottom: 60px;
+    align-items: flex-start;
+    gap: 20px;
+  }
 
-        align-items: flex-start;
-        gap: 20px;
-    }
+  .career-marker span:last-child {
+    display: none;
+  }
 
-    .career-marker span:last-child {
-        display: none;
-    }
+  .career-header {
+    margin-bottom: 50px;
+  }
 
-    .career-header {
-        margin-bottom: 50px;
-    }
+  .experience-card {
+    margin-bottom: 100px;
+  }
 
-    .experience-card {
-        margin-bottom: 100px;
-    }
+  .experience-sidebar {
+    display: flex;
 
-    .experience-sidebar {
-        display: flex;
+    gap: 25px;
 
-        gap: 25px;
+    padding: 25px;
+  }
 
-        padding: 25px;
-    }
+  .experience-number {
+    font-size: 3rem;
+  }
 
-    .experience-number {
-        font-size: 3rem;
-    }
+  .experience-main {
+    padding: 30px 25px;
+  }
 
-    .experience-main {
-        padding: 30px 25px;
-    }
+  .experience-heading {
+    flex-direction: column;
 
-    .experience-heading {
-        flex-direction: column;
+    padding-bottom: 30px;
+  }
 
-        padding-bottom: 30px;
-    }
+  .experience-block {
+    padding: 30px 0;
+  }
 
-    .experience-block {
-        padding: 30px 0;
-    }
+  .education-grid {
+    grid-template-columns: 1fr;
 
-    .education-grid {
-        grid-template-columns: 1fr;
+    margin-bottom: 100px;
+  }
 
-        margin-bottom: 100px;
-    }
+  .education-card {
+    min-height: 320px;
+  }
 
-    .education-card {
-        min-height: 320px;
-    }
-
-    .certificates-grid {
-        grid-template-columns: 1fr;
-    }
-
+  .certificates-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-
 @media (max-width: 480px) {
+  .career-title {
+    font-size: 2.5rem;
+  }
 
-    .career-title {
-        font-size: 2.5rem;
-    }
+  .experience-sidebar {
+    align-items: flex-start;
+  }
 
-    .experience-sidebar {
-        align-items: flex-start;
-    }
+  .experience-date {
+    font-size: 0.62rem;
+  }
 
-    .experience-date {
-        font-size: 0.62rem;
-    }
+  .experience-type {
+    display: none;
+  }
 
-    .experience-type {
-        display: none;
-    }
+  .experience-heading h3 {
+    font-size: 1.8rem;
+  }
 
-    .experience-heading h3 {
-        font-size: 1.8rem;
-    }
+  .experience-stack {
+    gap: 6px;
+  }
 
-    .experience-stack {
-        gap: 6px;
-    }
+  .experience-stack span {
+    font-size: 0.55rem;
+  }
 
-    .experience-stack span {
-        font-size: 0.55rem;
-    }
+  .education-card {
+    padding: 25px;
+  }
 
-    .education-card {
-        padding: 25px;
-    }
-
-    .certificate-image {
-        height: 230px;
-    }
-
+  .certificate-image {
+    height: 230px;
+  }
 }

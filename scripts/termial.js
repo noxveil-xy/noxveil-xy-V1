@@ -3,34 +3,19 @@
    SECURITY TERMINAL ENGINE
 ========================================================= */
 
-const terminalOutput =
-    document.getElementById("terminalOutput");
+const terminalOutput = document.getElementById("terminalOutput");
 
-const terminalCurrentCommand =
-    document.getElementById(
-        "terminalCurrentCommand"
-    );
+const terminalCurrentCommand = document.getElementById(
+  "terminalCurrentCommand",
+);
 
-const packetCounter =
-    document.getElementById(
-        "packetCounter"
-    );
+const packetCounter = document.getElementById("packetCounter");
 
-const eventCounter =
-    document.getElementById(
-        "eventCounter"
-    );
+const eventCounter = document.getElementById("eventCounter");
 
-const blockedCounter =
-    document.getElementById(
-        "blockedCounter"
-    );
+const blockedCounter = document.getElementById("blockedCounter");
 
-const trafficValue =
-    document.getElementById(
-        "trafficValue"
-    );
-
+const trafficValue = document.getElementById("trafficValue");
 
 /* =========================================================
    VARIABLES
@@ -42,624 +27,390 @@ let events = 17;
 
 let blocked = 3;
 
-
 /* =========================================================
    COMMANDS
 ========================================================= */
 
 const commands = [
+  "nmap -sS 192.168.1.20",
 
-    "nmap -sS 192.168.1.20",
+  "tcpdump -i eth0",
 
-    "tcpdump -i eth0",
+  "ss -tulpn",
 
-    "ss -tulpn",
+  "ip addr show",
 
-    "ip addr show",
+  "ip neigh show",
 
-    "ip neigh show",
+  "iptables -L -n -v",
 
-    "iptables -L -n -v",
+  "systemctl status firewall",
 
-    "systemctl status firewall",
+  "journalctl -u ssh",
 
-    "journalctl -u ssh",
+  "python3 network_monitor.py",
 
-    "python3 network_monitor.py",
+  "./security_monitor --analyze",
 
-    "./security_monitor --analyze",
+  "grep 'Failed password' /var/log/auth.log",
 
-    "grep 'Failed password' /var/log/auth.log",
-
-    "netstat -ant"
-
+  "netstat -ant",
 ];
-
 
 /* =========================================================
    SECURITY EVENTS
 ========================================================= */
 
 const securityEvents = [
+  {
+    type: "scan",
 
-    {
-        type: "scan",
+    prefix: "[SCAN]",
 
-        prefix: "[SCAN]",
+    text: "Scanning network interfaces...",
+  },
 
-        text:
-            "Scanning network interfaces..."
-    },
+  {
+    type: "scan",
 
-    {
-        type: "scan",
+    prefix: "[SCAN]",
 
-        prefix: "[SCAN]",
+    text: "Enumerating active hosts...",
+  },
 
-        text:
-            "Enumerating active hosts..."
-    },
+  {
+    type: "scan",
 
-    {
-        type: "scan",
+    prefix: "[SCAN]",
 
-        prefix: "[SCAN]",
+    text: "Analyzing TCP endpoints...",
+  },
 
-        text:
-            "Analyzing TCP endpoints..."
-    },
+  {
+    type: "success",
 
-    {
-        type: "success",
+    prefix: "[OK]",
 
-        prefix: "[OK]",
+    text: "Interface eth0 is operational",
+  },
 
-        text:
-            "Interface eth0 is operational"
-    },
+  {
+    type: "success",
 
-    {
-        type: "success",
+    prefix: "[OK]",
 
-        prefix: "[OK]",
+    text: "Firewall rules loaded",
+  },
 
-        text:
-            "Firewall rules loaded"
-    },
+  {
+    type: "success",
 
-    {
-        type: "success",
+    prefix: "[OK]",
 
-        prefix: "[OK]",
+    text: "SSH monitoring active",
+  },
 
-        text:
-            "SSH monitoring active"
-    },
+  {
+    type: "warning",
 
-    {
-        type: "warning",
+    prefix: "[WARN]",
 
-        prefix: "[WARN]",
+    text: "Unusual traffic pattern detected",
+  },
 
-        text:
-            "Unusual traffic pattern detected"
-    },
+  {
+    type: "warning",
 
-    {
-        type: "warning",
+    prefix: "[WARN]",
 
-        prefix: "[WARN]",
+    text: "Multiple connection attempts observed",
+  },
 
-        text:
-            "Multiple connection attempts observed"
-    },
+  {
+    type: "danger",
 
-    {
-        type: "danger",
+    prefix: "[ALERT]",
 
-        prefix: "[ALERT]",
+    text: "SYN scan detected from 192.168.1.47",
+  },
 
-        text:
-            "SYN scan detected from 192.168.1.47"
-    },
+  {
+    type: "danger",
 
-    {
-        type: "danger",
+    prefix: "[BLOCK]",
 
-        prefix: "[BLOCK]",
+    text: "Connection dropped by firewall",
+  },
 
-        text:
-            "Connection dropped by firewall"
-    },
+  {
+    type: "danger",
 
-    {
-        type: "danger",
+    prefix: "[ALERT]",
 
-        prefix: "[ALERT]",
+    text: "Suspicious ARP activity detected",
+  },
 
-        text:
-            "Suspicious ARP activity detected"
-    },
+  {
+    type: "success",
 
-    {
-        type: "success",
+    prefix: "[SECURE]",
 
-        prefix: "[SECURE]",
-
-        text:
-            "Threat contained successfully"
-    }
-
+    text: "Threat contained successfully",
+  },
 ];
-
 
 /* =========================================================
    INITIAL LOG
 ========================================================= */
 
 const initialLogs = [
+  ["Security terminal initialized", "[BOOT]", "success"],
 
-    [
-        "Security terminal initialized",
-        "[BOOT]",
-        "success"
-    ],
+  ["Loading monitoring modules...", "[INIT]", ""],
 
-    [
-        "Loading monitoring modules...",
-        "[INIT]",
-        ""
-    ],
+  ["Interface eth0 detected", "[OK]", "success"],
 
-    [
-        "Interface eth0 detected",
-        "[OK]",
-        "success"
-    ],
+  ["Firewall subsystem connected", "[OK]", "success"],
 
-    [
-        "Firewall subsystem connected",
-        "[OK]",
-        "success"
-    ],
+  ["Packet inspection engine started", "[INIT]", ""],
 
-    [
-        "Packet inspection engine started",
-        "[INIT]",
-        ""
-    ],
+  ["Network traffic monitoring enabled", "[LIVE]", "scan"],
 
-    [
-        "Network traffic monitoring enabled",
-        "[LIVE]",
-        "scan"
-    ],
-
-    [
-        "Awaiting network events...",
-        "[WAIT]",
-        ""
-    ]
-
+  ["Awaiting network events...", "[WAIT]", ""],
 ];
-
 
 /* =========================================================
    CURRENT TIME
 ========================================================= */
 
 function getTime() {
-
-    return new Date()
-        .toLocaleTimeString(
-            "en-US",
-            {
-                hour12: false
-            }
-        );
-
+  return new Date().toLocaleTimeString("en-US", {
+    hour12: false,
+  });
 }
-
 
 /* =========================================================
    ADD LINE
 ========================================================= */
 
-function addTerminalLine(
-    message,
-    prefix = "[INFO]",
-    type = ""
-) {
+function addTerminalLine(message, prefix = "[INFO]", type = "") {
+  const line = document.createElement("div");
 
-    const line =
-        document.createElement("div");
+  line.className = `terminal-line ${type}`;
 
+  const time = document.createElement("span");
 
-    line.className =
-        `terminal-line ${type}`;
+  time.className = "terminal-time";
 
+  time.textContent = getTime();
 
-    const time =
-        document.createElement("span");
+  const prefixElement = document.createElement("span");
 
-    time.className =
-        "terminal-time";
+  prefixElement.className = "terminal-prefix";
 
-    time.textContent =
-        getTime();
+  prefixElement.textContent = prefix;
 
+  const text = document.createElement("span");
 
-    const prefixElement =
-        document.createElement("span");
+  text.className = "terminal-message";
 
-    prefixElement.className =
-        "terminal-prefix";
+  text.textContent = message;
 
-    prefixElement.textContent =
-        prefix;
+  line.appendChild(time);
 
+  line.appendChild(prefixElement);
 
-    const text =
-        document.createElement("span");
+  line.appendChild(text);
 
-    text.className =
-        "terminal-message";
+  terminalOutput.appendChild(line);
 
-    text.textContent =
-        message;
-
-
-    line.appendChild(time);
-
-    line.appendChild(prefixElement);
-
-    line.appendChild(text);
-
-
-    terminalOutput.appendChild(line);
-
-
-    /*
+  /*
         Максимум строк,
         чтобы DOM не разрастался.
     */
 
-    while (
-        terminalOutput.children.length > 23
-    ) {
-
-        terminalOutput.removeChild(
-            terminalOutput.firstChild
-        );
-
-    }
-
+  while (terminalOutput.children.length > 23) {
+    terminalOutput.removeChild(terminalOutput.firstChild);
+  }
 }
-
 
 /* =========================================================
    TYPE COMMAND
 ========================================================= */
 
 function typeCommand(command) {
+  return new Promise((resolve) => {
+    terminalCurrentCommand.textContent = "";
 
-    return new Promise(resolve => {
+    let index = 0;
 
-        terminalCurrentCommand.textContent =
-            "";
+    const interval = setInterval(() => {
+      terminalCurrentCommand.textContent += command[index];
 
-        let index = 0;
+      index++;
 
+      if (index >= command.length) {
+        clearInterval(interval);
 
-        const interval =
-            setInterval(() => {
-
-                terminalCurrentCommand.textContent +=
-                    command[index];
-
-
-                index++;
-
-
-                if (
-                    index >= command.length
-                ) {
-
-                    clearInterval(interval);
-
-                    resolve();
-
-                }
-
-            }, 32);
-
-    });
-
+        resolve();
+      }
+    }, 32);
+  });
 }
-
 
 /* =========================================================
    ADD RANDOM EVENT
 ========================================================= */
 
 function addRandomSecurityEvent() {
+  const event =
+    securityEvents[Math.floor(Math.random() * securityEvents.length)];
 
-    const event =
-        securityEvents[
-            Math.floor(
-                Math.random() *
-                securityEvents.length
-            )
-        ];
+  addTerminalLine(event.text, event.prefix, event.type);
 
+  events++;
 
-    addTerminalLine(
-        event.text,
-        event.prefix,
-        event.type
-    );
+  if (event.type === "danger") {
+    blocked++;
+  }
 
-
-    events++;
-
-
-    if (
-        event.type === "danger"
-    ) {
-
-        blocked++;
-
-    }
-
-
-    updateCounters();
-
+  updateCounters();
 }
-
 
 /* =========================================================
    COUNTERS
 ========================================================= */
 
 function updateCounters() {
+  packetCounter.textContent = String(packets).padStart(6, "0");
 
-    packetCounter.textContent =
-        String(packets)
-            .padStart(6, "0");
+  eventCounter.textContent = String(events).padStart(5, "0");
 
-
-    eventCounter.textContent =
-        String(events)
-            .padStart(5, "0");
-
-
-    blockedCounter.textContent =
-        String(blocked)
-            .padStart(5, "0");
-
+  blockedCounter.textContent = String(blocked).padStart(5, "0");
 }
-
 
 /* =========================================================
    TRAFFIC
 ========================================================= */
 
 function updateTraffic() {
+  const value = Math.floor(Math.random() * 35) + 55;
 
-    const value =
-        Math.floor(
-            Math.random() * 35
-        ) + 55;
-
-
-    trafficValue.textContent =
-        `${value}%`;
-
+  trafficValue.textContent = `${value}%`;
 }
-
 
 /* =========================================================
    COMMAND EXECUTION
 ========================================================= */
 
 async function executeCommand() {
-
-
-    /*
+  /*
         Выбираем случайную команду.
     */
 
-    const command =
-        commands[
-            Math.floor(
-                Math.random() *
-                commands.length
-            )
-        ];
+  const command = commands[Math.floor(Math.random() * commands.length)];
 
-
-    /*
+  /*
         Печатаем её
         символ за символом.
     */
 
-    await typeCommand(command);
+  await typeCommand(command);
 
+  await wait(400);
 
-    await wait(400);
-
-
-    /*
+  /*
         Переносим команду
         в историю терминала.
     */
 
-    addTerminalLine(
-        command,
-        ">",
-        "command"
-    );
+  addTerminalLine(command, ">", "command");
 
+  terminalCurrentCommand.textContent = "";
 
-    terminalCurrentCommand.textContent =
-        "";
+  await wait(300);
 
-
-    await wait(300);
-
-
-    /*
+  /*
         Генерируем события
         после выполнения.
     */
 
-    const eventCount =
-        Math.floor(
-            Math.random() * 3
-        ) + 2;
+  const eventCount = Math.floor(Math.random() * 3) + 2;
 
+  for (let i = 0; i < eventCount; i++) {
+    addRandomSecurityEvent();
 
-    for (
-        let i = 0;
-        i < eventCount;
-        i++
-    ) {
+    packets += Math.floor(Math.random() * 35) + 10;
 
-        addRandomSecurityEvent();
+    updateCounters();
 
+    updateTraffic();
 
-        packets +=
-            Math.floor(
-                Math.random() * 35
-            ) + 10;
-
-
-        updateCounters();
-
-        updateTraffic();
-
-
-        await wait(
-            Math.floor(
-                Math.random() * 500
-            ) + 250
-        );
-
-    }
-
+    await wait(Math.floor(Math.random() * 500) + 250);
+  }
 }
-
 
 /* =========================================================
    WAIT
 ========================================================= */
 
 function wait(milliseconds) {
-
-    return new Promise(
-        resolve =>
-            setTimeout(
-                resolve,
-                milliseconds
-            )
-    );
-
+  return new Promise((resolve) => setTimeout(resolve, milliseconds));
 }
-
 
 /* =========================================================
    INITIALIZE TERMINAL
 ========================================================= */
 
-initialLogs.forEach(
-    ([message, prefix, type]) => {
-
-        addTerminalLine(
-            message,
-            prefix,
-            type
-        );
-
-    }
-);
-
+initialLogs.forEach(([message, prefix, type]) => {
+  addTerminalLine(message, prefix, type);
+});
 
 /* =========================================================
    PACKET ACTIVITY
 ========================================================= */
 
 setInterval(() => {
+  packets += Math.floor(Math.random() * 12) + 1;
 
-    packets +=
-        Math.floor(
-            Math.random() * 12
-        ) + 1;
-
-
-    updateCounters();
-
+  updateCounters();
 }, 1000);
-
 
 /* =========================================================
    TRAFFIC ACTIVITY
 ========================================================= */
 
 setInterval(() => {
-
-    updateTraffic();
-
+  updateTraffic();
 }, 1200);
-
 
 /* =========================================================
    TERMINAL LOOP
 ========================================================= */
 
 async function terminalLoop() {
+  while (true) {
+    await executeCommand();
 
-    while (true) {
-
-        await executeCommand();
-
-        await wait(
-            Math.floor(
-                Math.random() * 700
-            ) + 700
-        );
-
-    }
-
+    await wait(Math.floor(Math.random() * 700) + 700);
+  }
 }
 
-
 terminalLoop();
-
 
 /* =========================================================
    BACK TO TOP
 ========================================================= */
 
-const backToTop =
-    document.querySelector(
-        '.footer-bottom a[href="#top"]'
-    );
-
+const backToTop = document.querySelector('.footer-bottom a[href="#top"]');
 
 if (backToTop) {
+  backToTop.addEventListener("click", (event) => {
+    event.preventDefault();
 
-    backToTop.addEventListener(
-        "click",
-        event => {
-
-            event.preventDefault();
-
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-
-        }
-    );
-
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
 }
