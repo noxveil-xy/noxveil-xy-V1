@@ -91,7 +91,7 @@
 
 /* Имя */
 .hero-text_title {
-  font-family: "Fjalla", sans-serif;
+  font-family: "IBMPL", sans-serif;
   margin: 0;
   color: #242427;
   font-size: clamp(2.2rem, 4vw, 4.5rem);

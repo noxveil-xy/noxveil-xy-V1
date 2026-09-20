@@ -270,10 +270,7 @@
 
   padding: 25px 28px;
 
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.017) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.012) 1px, transparent 1px),
-    #050506;
+  background: #050506;
 
   background-size: 40px 40px;
 
