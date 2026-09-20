@@ -255,6 +255,14 @@
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
 }
 
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 /* =========================================================
    FORM HEADER
    ========================================================= */
@@ -376,6 +384,11 @@
   letter-spacing: 0.14em;
 }
 
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: var(--red-text);
+}
+
 .form-field input,
 .form-field select,
 .form-field textarea {
@@ -403,11 +416,6 @@
     box-shadow 0.3s ease;
 }
 
-.form-field input::placeholder,
-.form-field textarea::placeholder {
-  color: var(--red-text);
-}
-
 .form-field select {
   color: var(--red-text);
 
@@ -417,7 +425,7 @@
 .form-field select option {
   background: #0b0b0c;
 
-  color: #eeeeef;
+  color: var(--white-back);
 }
 
 .form-field textarea {
@@ -442,6 +450,119 @@
   background: #09090a;
 
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.025);
+}
+
+.field-error {
+  display: block;
+  margin-top: 6px;
+  min-height: 16px;
+  font-size: 0.65rem;
+  color: var(--red-text);
+}
+
+/* ========================================
+   FORM RESULT
+======================================== */
+
+.form-result {
+  display: none;
+  margin-top: 22px;
+  padding: 14px 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  background: rgba(255, 255, 255, 0.02);
+
+  font-family: monospace;
+  font-size: 0.62rem;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+}
+
+.form-result.visible {
+  display: block;
+}
+
+/* SUCCESS */
+
+.form-result.success {
+  color: #28eb8d;
+  border-color: #28eb8d;
+  /* background: #34ff63; */
+}
+
+/* ERROR */
+
+.form-result.error {
+  color: var(--red-text);
+  border-color: rgba(239, 30, 86, 0.25);
+  background: rgba(239, 30, 86, 0.03);
+}
+
+/* ========================================
+   FIELD ERRORS
+======================================== */
+
+.field-error {
+  display: none;
+
+  margin-top: 6px;
+
+  color: #ef1e56;
+
+  font-family: monospace;
+  font-size: 0.58rem;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+}
+
+.field-error.visible {
+  display: block;
+}
+
+/* ========================================
+   INVALID INPUT
+======================================== */
+
+.form-field input.invalid,
+.form-field select.invalid,
+.form-field textarea.invalid {
+  border-color: rgba(239, 30, 86, 0.6);
+}
+
+.form-field input.invalid:focus,
+.form-field select.invalid:focus,
+.form-field textarea.invalid:focus {
+  border-color: rgba(239, 30, 86, 0.9);
+  box-shadow: 0 0 0 1px rgba(239, 30, 86, 0.1);
+}
+
+/* ========================================
+   CONSENT ERROR
+======================================== */
+
+.form-consent.invalid .consent-checkbox {
+  border-color: rgba(239, 30, 86, 0.8);
+  box-shadow: 0 0 0 1px rgba(239, 30, 86, 0.1);
+}
+
+#consent-error {
+  margin-top: 10px;
+  padding-left: 28px;
+}
+
+/* ========================================
+   SUBMIT BUTTON
+======================================== */
+
+.contact-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.contact-submit.loading {
+  pointer-events: none;
 }
 
 /* =========================================================
@@ -496,10 +617,8 @@
 
 .contact-submit {
   display: flex;
-  font-family: "AntiSlab", sans-serif;
 
   align-items: center;
-
   gap: 30px;
 
   padding: 17px 22px;
@@ -515,6 +634,7 @@
   font-size: 0.68rem;
 
   font-weight: 600;
+  width: 100%;
 
   letter-spacing: 0.13em;
 
@@ -525,6 +645,10 @@
     color 0.3s ease,
     border-color 0.3s ease,
     transform 0.3s ease;
+}
+
+.contact-submit span {
+  font-family: "AntiSlab", sans-serif;
 }
 
 .contact-submit:hover {
@@ -539,7 +663,7 @@
 
 .submit-arrow {
   font-size: 1.1rem;
-
+  margin-left: auto;
   transition: transform 0.3s ease;
 }
 
@@ -654,5 +778,231 @@
 
   .contact-channel strong {
     font-size: 0.72rem;
+  }
+}
+
+/* =========================================================
+PERSONAL DATA CONSENT
+========================================================= */
+
+.form-consent {
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+
+.consent-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  cursor: pointer;
+
+  font-family: monospace;
+  color: #66666b;
+
+  font-size: 0.58rem;
+  line-height: 1.6;
+}
+
+/* Скрываем стандартный checkbox */
+
+.consent-label input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Наш checkbox */
+
+.consent-checkbox {
+  position: relative;
+
+  flex-shrink: 0;
+
+  width: 15px;
+  height: 15px;
+
+  margin-top: 1px;
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+
+  background: #070708;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Галочка */
+
+.consent-checkbox::after {
+  content: "";
+
+  position: absolute;
+
+  left: 4px;
+  top: 1px;
+
+  width: 5px;
+  height: 9px;
+
+  border-right: 1px solid #080809;
+  border-bottom: 1px solid #080809;
+
+  transform: rotate(45deg) scale(0);
+
+  transition: transform 0.2s ease;
+}
+
+/* Checked */
+
+.consent-label input:checked + .consent-checkbox {
+  background: #eeeeef;
+
+  border-color: #eeeeef;
+
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+}
+
+.consent-label input:checked + .consent-checkbox::after {
+  transform: rotate(45deg) scale(1);
+}
+
+/* Hover */
+
+.consent-label:hover .consent-checkbox {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Focus */
+
+.consent-label input:focus-visible + .consent-checkbox {
+  outline: 1px solid rgba(255, 255, 255, 0.5);
+
+  outline-offset: 3px;
+}
+
+/* =========================================================
+VALIDATION ERRORS
+========================================================= */
+
+.field-error {
+  display: none;
+
+  margin-top: -3px;
+
+  color: #ef1e56;
+
+  font-family: monospace;
+  font-size: 0.58rem;
+
+  line-height: 1.4;
+
+  letter-spacing: 0.04em;
+}
+
+.field-error.visible {
+  display: block;
+}
+
+/* Invalid fields */
+
+.form-field.invalid input,
+.form-field.invalid select,
+.form-field.invalid textarea {
+  border-color: rgba(239, 30, 86, 0.65);
+
+  box-shadow: 0 0 0 2px rgba(239, 30, 86, 0.04);
+}
+
+/* Consent error */
+
+.form-consent.invalid .consent-checkbox {
+  border-color: rgba(239, 30, 86, 0.8);
+
+  box-shadow: 0 0 10px rgba(239, 30, 86, 0.08);
+}
+
+/* =========================================================
+FORM RESULT
+========================================================= */
+
+.form-result {
+  display: none;
+
+  margin-top: 22px;
+  padding: 14px 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: rgba(255, 255, 255, 0.015);
+
+  font-family: monospace;
+
+  font-size: 0.62rem;
+
+  line-height: 1.6;
+
+  letter-spacing: 0.05em;
+}
+
+.form-result.visible {
+  display: block;
+}
+
+.form-result.success {
+  color: #bdbdbd;
+
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.form-result.error {
+  color: #ef1e56;
+
+  border-color: rgba(239, 30, 86, 0.25);
+}
+
+/* =========================================================
+SUBMIT LOADING
+========================================================= */
+
+.contact-submit.loading {
+  opacity: 0.6;
+
+  cursor: wait;
+
+  pointer-events: none;
+}
+
+.contact-submit.loading .submit-text::after {
+  content: "...";
+}
+
+/* =========================================================
+SUCCESS STATE
+========================================================= */
+
+.contact-form.sent .security-indicator {
+  background: #eeeeef;
+
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .consent-label {
+    font-size: 0.57rem;
+  }
+
+  .form-result {
+    font-size: 0.58rem;
   }
 }

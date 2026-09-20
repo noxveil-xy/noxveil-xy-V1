@@ -1312,50 +1312,7 @@
               меня на собеседование — оставьте сообщение через форму.
             </p>
 
-            <div class="contact-channels">
-              <a href="mailto:your@email.com" class="contact-channel">
-                <span class="channel-number">01</span>
-
-                <div>
-                  <small>EMAIL</small>
-                  <strong>sevenneys@gmail.com</strong>
-                </div>
-
-                <span class="channel-arrow">↗</span>
-              </a>
-
-              <a
-                href="https://t.me/seven_ls"
-                class="contact-channel"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span class="channel-number">02</span>
-
-                <div>
-                  <small>TELEGRAM</small>
-                  <strong>@seven_ls</strong>
-                </div>
-
-                <span class="channel-arrow">↗</span>
-              </a>
-
-              <a
-                href="https://github.com/your_username"
-                class="contact-channel"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span class="channel-number">03</span>
-
-                <div>
-                  <small>GITHUB</small>
-                  <strong>github.com/noxveil-xy</strong>
-                </div>
-
-                <span class="channel-arrow">↗</span>
-              </a>
-            </div>
+            <div class="contact-channels"></div>
           </div>
 
           <!-- FORM -->
@@ -1374,30 +1331,54 @@
               </div>
             </div>
 
-            <form class="contact-form">
+            <form
+              class="contact-form"
+              id="contact-form"
+              novalidate
+              action="https://formspree.io/f/mbgldyaz"
+              method="POST"
+            >
+              <div class="honeypot" aria-hidden="true">
+                <label for="website">Website</label>
+                <input
+                  type="text"
+                  id="website"
+                  name="_gotcha"
+                  tabindex="-1"
+                  autocomplete="off"
+                />
+              </div>
               <div class="form-row">
                 <div class="form-field">
-                  <label for="contact-name"> NAME </label>
+                  <label for="contact-name">NAME</label>
 
                   <input
                     type="text"
                     id="contact-name"
                     name="name"
                     placeholder="Имя"
+                    autocomplete="name"
+                    maxlength="100"
                     required
                   />
+
+                  <span class="field-error" id="name-error"></span>
                 </div>
 
                 <div class="form-field">
-                  <label for="contact-email"> EMAIL </label>
+                  <label for="contact-email">EMAIL</label>
 
                   <input
                     type="email"
                     id="contact-email"
                     name="email"
                     placeholder="Почта"
+                    autocomplete="email"
+                    maxlength="254"
                     required
                   />
+
+                  <span class="field-error" id="email-error"></span>
                 </div>
               </div>
 
@@ -1405,17 +1386,22 @@
                 <label for="contact-company"> COMPANY / ORGANIZATION </label>
 
                 <input
+                  class="field-select-placeholder"
                   type="text"
                   id="contact-company"
                   name="company"
                   placeholder="Компания"
+                  autocomplete="organization"
+                  maxlength="150"
                 />
+
+                <span class="field-error" id="company-error"></span>
               </div>
 
               <div class="form-field">
                 <label for="contact-subject"> CONTACT TYPE </label>
 
-                <select id="contact-subject" name="subject">
+                <select id="contact-subject" name="subject" required>
                   <option value="" selected disabled>Тип связи</option>
 
                   <option value="job">Вакансия</option>
@@ -1430,6 +1416,8 @@
 
                   <option value="other">Другое</option>
                 </select>
+
+                <span class="field-error" id="subject-error"></span>
               </div>
 
               <div class="form-field">
@@ -1440,25 +1428,59 @@
                   name="message"
                   rows="6"
                   placeholder="Написать сообщение..."
+                  minlength="10"
+                  maxlength="5000"
                   required
                 ></textarea>
+
+                <span class="field-error" id="message-error"></span>
               </div>
 
-              <div class="form-footer">
-                <div class="form-security">
-                  <span class="security-indicator"></span>
+              <!-- ===================================================== PERSONAL DATA CONSENT ====================================================== -->
 
-                  <span>
-                    YOUR MESSAGE WILL BE TRANSMITTED THROUGH A SECURE CHANNEL
+              <div class="form-consent">
+                <label class="consent-label">
+                  <input
+                    type="checkbox"
+                    id="contact-consent"
+                    name="consent"
+                    value="true"
+                    required
+                  />
+
+                  <span class="consent-checkbox"></span>
+
+                  <span class="consent-text">
+                    Я даю согласие на обработку моих персональных данных в целях
+                    обработки данного обращения.
                   </span>
-                </div>
+                </label>
 
-                <button type="submit" class="contact-submit">
-                  <span>SEND MESSAGE</span>
+                <span class="field-error" id="consent-error"></span>
+              </div>
+
+              <!-- ===================================================== FORM FOOTER ====================================================== -->
+
+              <div class="form-footer">
+                <button
+                  type="submit"
+                  class="contact-submit"
+                  id="contact-submit"
+                >
+                  <span class="submit-text"> SEND MESSAGE </span>
 
                   <span class="submit-arrow"> → </span>
                 </button>
               </div>
+
+              <!-- ===================================================== FORM RESULT ====================================================== -->
+
+              <div
+                class="form-result"
+                id="form-result"
+                role="status"
+                aria-live="polite"
+              ></div>
             </form>
           </div>
         </div>
@@ -1778,6 +1800,7 @@
     </footer>
     <script src="./scripts/test.js"></script>
     <script src="./scripts/glitch-effect.js"></script>
+    <script src="./scripts/form.js"></script>
     <script src="./scripts/termial.js"></script>
     <script src="./scripts/nav-menu-scroll.js"></script>
     <script src="./scripts/nav-menu-mobile-scroll.js"></script>
